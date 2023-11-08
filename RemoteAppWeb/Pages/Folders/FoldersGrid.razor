@@ -1,0 +1,125 @@
+﻿@page "/Folders"
+
+@inject IJSRuntime JSRuntime
+@namespace RemoteAppWeb.Pages.Folders
+@using DevExpress.Blazor
+@using RemoteApp.Data.Models
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize]
+
+
+<h3 style="color: #2163ac" class="PageHeader"> Dossiers</h3>
+
+<div class="GridActions">
+    <DxButton RenderStyle="ButtonRenderStyle.Dark" @onclick="RefreshGrid" RenderStyleMode="ButtonRenderStyleMode.Outline" Text="Actualiser" SizeMode="@SizeMode.Small" IconCssClass="undo" style="margin: 0.5em;" />
+
+</div>
+
+<DxDataGrid Data="@Folderslist"
+            KeyFieldName="FolderId"
+            DataNavigationMode="DataGridNavigationMode.VirtualScrolling"
+            PopupEditFormHeaderText="Add/Edit Dossier"
+            PopupEditFormCssClass="my-style"
+            PageSize="25"
+            ShowFilterRow="true"
+            ShowGroupPanel="false"
+            ShowPager="true"
+            PagerNavigationMode="PagerNavigationMode.InputBox"
+            PagerPageSizeSelectorVisible="true"
+            PagerAllDataRowsItemVisible="true"
+            VerticalScrollableHeight="400"
+            VerticalScrollBarMode="ScrollBarMode.Auto"
+            RowRemoving="@((dataItem) => OnRowRemoving(dataItem))"
+            RowInserting="@((newValues) => OnRowInserting(newValues))"
+            RowUpdating="@((updatingDataItem, newValues) => OnRowUpdating(updatingDataItem, newValues))"
+
+             RowEditStart="@(dataItem => OnRowEditStarting(dataItem))"
+            RowInsertStart="@(() => OnRowNewStarting())"
+
+            CssClass="mw-1100"
+            HorizontalScrollBarMode="ScrollBarMode.Visible"
+            EditMode="DataGridEditMode.PopupEditForm">
+    <Columns>
+        <DxDataGridCommandColumn
+        
+            NewButtonVisible="@CanCreate"
+            EditButtonVisible="@CanUpdate"
+            DeleteButtonVisible="@CanDelete"
+            
+            Width="100px"></DxDataGridCommandColumn>
+
+
+        <DxDataGridColumn Width="80px" Field="FolderId" EditorVisible="false" Caption="Id" />
+        <DxDataGridColumn Width="180px" Field="FolderName" Caption="Nom dossier" />
+        
+        <DxDataGridColumn Width="180px" Field="FolderDescription" Caption="Description" />
+        
+       
+       <DxDataGridComboBoxColumn Width="180px" Field="ParentFolderId"
+                                  Caption="Dossier parent"
+                                  Data="@ParentFolderslist"
+                                   AllowFilter="true"
+                                  TextFieldName="@nameof(Folder.FolderName)"
+                                  ValueFieldName="@nameof(Folder.FolderId)">
+           
+        </DxDataGridComboBoxColumn>
+
+          <DxDataGridComboBoxColumn Width="180px" Field="FolderStatusInt"
+                                  AllowFilter="true"
+                                  Caption="Status"
+                                  Data="@FolderStatuses"
+                                  FilteringMode="DataGridFilteringMode.Contains"
+                                  ClearButtonDisplayMode="@DataEditorClearButtonDisplayMode.Auto"
+                                  TextFieldName="Key"
+                                  ValueFieldName="Value">
+           
+        </DxDataGridComboBoxColumn>
+    </Columns>
+</DxDataGrid>
+
+
+
+<style>
+    .closePassPop {
+        position: absolute;
+        bottom: -50px;
+        height: 32px;
+        font-size: 14px;
+        line-height: 13px;
+        right: 90px;
+    }
+
+    .passInput {
+        padding: 0;
+    }
+
+    .RolePopup {
+        max-width: 50% !important;
+    }
+
+    a.close-button {
+        float: right;
+        right: 10px;
+    }
+
+    .custom-header {
+        height: 45px;
+        padding: 10px;
+    }
+
+    .RolePopup .row {
+        height: 50px;
+    }
+
+    .editPassBtn {
+        font-size: 14px;
+        height: 30px;
+    }
+
+    .my-style {
+        min-width: 80%;
+        vertical-align: middle;
+    }
+</style>
+
+
