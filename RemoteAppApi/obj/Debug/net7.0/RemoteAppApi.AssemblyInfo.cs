@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RemoteAppApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ee6a50b1f0a9d76fd7d3574faaae7a6508ac40a1")]
 [assembly: System.Reflection.AssemblyProductAttribute("RemoteAppApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RemoteAppApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
