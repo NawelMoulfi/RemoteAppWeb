@@ -1,0 +1,14 @@
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\bin\Debug\net7.0\RemoteAppSharedData.deps.json
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\bin\Debug\net7.0\RemoteAppSharedData.runtimeconfig.json
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\bin\Debug\net7.0\RemoteAppSharedData.dll
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\bin\Debug\net7.0\RemoteAppSharedData.pdb
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\obj\Debug\net7.0\RemoteAppSharedData.csproj.AssemblyReference.cache
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\obj\Debug\net7.0\RemoteAppSharedData.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\obj\Debug\net7.0\RemoteAppSharedData.AssemblyInfoInputs.cache
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\obj\Debug\net7.0\RemoteAppSharedData.AssemblyInfo.cs
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\obj\Debug\net7.0\RemoteAppSharedData.csproj.CoreCompileInputs.cache
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\obj\Debug\net7.0\RemoteAppSharedData.dll
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\obj\Debug\net7.0\refint\RemoteAppSharedData.dll
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\obj\Debug\net7.0\RemoteAppSharedData.pdb
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\obj\Debug\net7.0\RemoteAppSharedData.genruntimeconfig.cache
+C:\Users\bmlab\Downloads\Blazor\RemoteApp\RemoteAppSharedData\obj\Debug\net7.0\ref\RemoteAppSharedData.dll
