@@ -1,0 +1,171 @@
+﻿@page "/Users"
+
+@inject IJSRuntime JSRuntime
+
+@using DevExpress.Blazor
+@using Shared.Dto
+@namespace RemoteApp.Pages.Users
+
+
+<h3 style="color: #2163ac" class="PageHeader"> Users</h3>
+
+<div class="GridActions">
+    <DxButton RenderStyle="ButtonRenderStyle.Dark" @onclick="RefreshGrid" RenderStyleMode="ButtonRenderStyleMode.Outline" Text="Actualiser" SizeMode="@SizeMode.Small" IconCssClass="undo" style="margin: 0.5em;" />
+
+</div>
+
+<DxDataGrid Data="@Userslist"
+            KeyFieldName="UserId"
+            DataNavigationMode="DataGridNavigationMode.VirtualScrolling"
+            PopupEditFormHeaderText="Add/Edit User"
+            PopupEditFormCssClass="my-style"
+            PageSize="25"
+            ShowFilterRow="true"
+            ShowGroupPanel="false"
+            ShowPager="true"
+            PagerNavigationMode="PagerNavigationMode.InputBox"
+            PagerPageSizeSelectorVisible="true"
+            PagerAllDataRowsItemVisible="true"
+            VerticalScrollableHeight="400"
+            VerticalScrollBarMode="ScrollBarMode.Auto"
+            RowRemoving="@((dataItem) => OnRowRemoving(dataItem))"
+            RowInserting="@((newValues) => OnRowInserting(newValues))"
+            RowUpdating="@((updatingDataItem, newValues) => OnRowUpdating(updatingDataItem, newValues))"
+            CssClass="mw-1100"
+            HorizontalScrollBarMode="ScrollBarMode.Visible"
+            EditMode="DataGridEditMode.PopupEditForm">
+    <Columns>
+        <DxDataGridCommandColumn
+        
+            NewButtonVisible="@CanCreate"
+            EditButtonVisible="@CanUpdate"
+            DeleteButtonVisible="@CanDelete"
+            
+            Width="100px"></DxDataGridCommandColumn>
+
+         <DxDataGridColumn  EditorVisible="false" Caption="Changer PWD" Width="80px">
+                <DisplayTemplate>
+                        @{ var user = context as UserDto; }
+                        <DxButton Context="PaymentCancel" RenderStyle="ButtonRenderStyle.Primary" SizeMode="SizeMode.Small" @onclick="@(() => ChangePassword( user))">Changer PWD</DxButton>
+                </DisplayTemplate>
+            </DxDataGridColumn>
+
+        <DxDataGridColumn Width="80px" Field="UserId" EditorVisible="false" Caption="Id" />
+        <DxDataGridColumn Width="180px" Field="UserLogin" Caption="Login" />
+        <DxDataGridColumn Width="180px" Field="UserNom" Caption="Nom" />
+        <DxDataGridColumn Width="180px" Field="UserPrenom" Caption="Prénom" />
+        <DxDataGridColumn Width="180px" Field="UserPhone" Visible="false" EditorVisible="true" Caption="Tél portable" />
+        <DxDataGridColumn Width="180px" Field="UserEmail" Visible="false" EditorVisible="true" Caption="Email" />
+
+        <DxDataGridColumn Width="180px" Field="UserMaxCapacity" Caption="Déconnexion(minutes)" />
+       
+        <DxDataGridComboBoxColumn Width="180px" Field="RoleId"
+                                  Caption="Role"
+                                  Data="@Roleslist"
+                                
+                                  AllowGroup="true"
+                                  TextFieldName="@nameof(user.RoleRoleName)"
+                                  ValueFieldName="@nameof(user.RoleId)"
+                                 >
+            <EditTemplate>
+                <DxComboBox Data="Roleslist"
+                            AllowUserInput="true"
+                            ListRenderMode="ListRenderMode.Virtual"
+                            FilteringMode="DataGridFilteringMode.Contains"
+                            ClearButtonDisplayMode="@DataEditorClearButtonDisplayMode.Auto"
+                            TextFieldName="@nameof(user.RoleRoleName)"
+                            ValueFieldName="@nameof(user.RoleId)"
+                            @bind-Value="selectedvalue">
+                    <DxListEditorColumn FieldName="RoleId" />
+                    <DxListEditorColumn FieldName="RoleName" />
+                </DxComboBox>
+            </EditTemplate>
+        </DxDataGridComboBoxColumn>
+
+          <DxDataGridComboBoxColumn Width="180px" Field="UserStatusInt"
+                                  AllowFilter="true"
+                                  Caption="Status"
+                                  Data="UserStatuses"
+                                  FilteringMode="DataGridFilteringMode.Contains"
+                                  ClearButtonDisplayMode="@DataEditorClearButtonDisplayMode.Auto"
+                                  TextFieldName="Key"
+                                  ValueFieldName="Value">
+           
+        </DxDataGridComboBoxColumn>
+    </Columns>
+
+</DxDataGrid>
+<DxPopup HeaderText="Changer mot de passe" Visible="@PopupVisible" CssClass="RolePopup">
+    <HeaderTemplate>
+        <div class="custom-header bg-primary text-white w-100">
+            <span class="demo-icon-info">Changer le mot de passe</span>
+            <a class="close-button oi oi-x text-white" href="javascript:;" aria-hidden="true"
+               role="button" aria-label="Close popup" @onclick="@ClosePopup"></a>
+        </div>
+    </HeaderTemplate>
+    <Content>
+        <div class="row">
+            <div class="col-md-5">Nouveau mot de passe :</div>
+            <div class="col-md-6 passInput">
+                <DxTextBox @bind-Text="@newPassword" Password="true">
+                </DxTextBox>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-5">Confirmer le nouveau mot de passe :</div>
+            <div class="col-md-6 passInput">
+                <DxTextBox @bind-Text="@confirmedPassword" Password="true">
+                </DxTextBox>
+            </div>
+        </div>
+        <input type="button" class="btn btn-success closePassPop" value="Enregistrer" @onclick="@(() => { SaveNewPassword(); })" />
+    </Content>
+    <FooterTemplate>
+        <DxButton RenderStyle="ButtonRenderStyle.Primary" @onclick="@ClosePopup" Text="Fermer" />
+    </FooterTemplate>
+</DxPopup>
+
+
+<style>
+    .closePassPop {
+        position: absolute;
+        bottom: -50px;
+        height: 32px;
+        font-size: 14px;
+        line-height: 13px;
+        right: 90px;
+    }
+
+    .passInput {
+        padding: 0;
+    }
+
+    .RolePopup {
+        max-width: 50% !important;
+    }
+
+    a.close-button {
+        float: right;
+        right: 10px;
+    }
+
+    .custom-header {
+        height: 45px;
+        padding: 10px;
+    }
+
+    .RolePopup .row {
+        height: 50px;
+    }
+
+    .editPassBtn {
+        font-size: 14px;
+        height: 30px;
+    }
+
+    .my-style {
+        min-width: 80%;
+        vertical-align: middle;
+    }
+</style>

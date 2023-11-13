@@ -1,0 +1,162 @@
+@page "/clients"
+@using Shared.Dto
+@using DevExpress.Blazor
+@namespace RemoteApp.Pages.RapportIntervention
+<div class="GridActions">
+    <DxButton RenderStyle="ButtonRenderStyle.Dark" @onclick="RefreshGrid" RenderStyleMode="ButtonRenderStyleMode.Outline" Text="Actualiser" SizeMode="@SizeMode.Small" IconCssClass="undo" style="margin: 0.5em;" />
+</div>
+<DxGrid @ref="Grid"
+        Data="@Clients"
+        ShowFilterRow="true"
+        PagerNavigationMode="PagerNavigationMode.InputBox"
+        PageSizeSelectorVisible="true"
+        PageSizeSelectorAllRowsItemVisible="true"
+        CustomizeEditModel="Grid_CustomizeEditModel"
+        EditModelSaving="Grid_EditModelSaving"
+        DataItemDeleting="Grid_DataItemDeleting"
+        PageSizeSelectorItems="@(new int[] { 5,10,20 })"
+       >
+    <Columns>
+        <DxGridCommandColumn Width="170px" />
+        <DxGridDataColumn FieldName="@nameof(ClientDto.ClientId)" Caption="Id " Width="180px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+        <DxGridDataColumn FieldName="@nameof(ClientDto.PID)" Caption="PID " Width="180px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+        <DxGridDataColumn FieldName="@nameof(ClientDto.FirstName)" Caption="Nom " Width="180px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+        <DxGridDataColumn FieldName="@nameof(ClientDto.LastName)" Caption="Prenom " Width="180px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+        <DxGridDataColumn FieldName="@nameof(ClientDto.Wilaya)" Caption="Wilaya " Width="180px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+        <DxGridDataColumn FieldName="@nameof(ClientDto.Adresse)" Caption="Adress " Width="180px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+        <DxGridDataColumn FieldName="@nameof(ClientDto.PhoneNumber)" Caption="Telephone" Width="180px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+    </Columns>
+    <EditFormTemplate  Context="EditFormContext" >
+        @{
+            var client = (ClientDto)EditFormContext.EditModel;
+        }
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <DxFormLayout Id="EditForm" CssClass="w-100">
+            <DxFormLayoutItem Caption="PID:" ColSpanMd="6">
+                <DxTextBox @bind-Text="@client.PID" />
+                <ValidationMessage For="@(() => client.PID)" />
+            </DxFormLayoutItem>
+    
+            <DxFormLayoutItem Caption="Nom:" ColSpanMd="6">
+                 <DxTextBox @bind-Text="@client.FirstName" />
+                 <ValidationMessage For="@(() => client.FirstName)" />
+            </DxFormLayoutItem>
+    
+            <DxFormLayoutItem Caption="Prenom:" ColSpanMd="6">
+                 <DxTextBox @bind-Text="@client.LastName" />
+                 <ValidationMessage For="@(() => client.LastName)" />
+            </DxFormLayoutItem>
+    
+            <DxFormLayoutItem Caption="Wilaya:" ColSpanMd="6">
+                 <DxTextBox @bind-Text="@client.Wilaya" />
+                 <ValidationMessage For="@(() => client.Wilaya)" />
+            </DxFormLayoutItem>
+    
+            <DxFormLayoutItem Caption="Adress" ColSpanMd="6">
+                <DxTextBox @bind-Text="@client.Adresse" />
+                <ValidationMessage For="@(() => client.Adresse)" />
+            </DxFormLayoutItem>
+    
+            <DxFormLayoutItem Caption="Telephone" ColSpanMd="6">
+               <DxTextBox @bind-Text="@client.PhoneNumber" />
+               <ValidationMessage For="@(() => client.PhoneNumber)" />
+            </DxFormLayoutItem>
+        </DxFormLayout>
+    </EditFormTemplate>
+</DxGrid>
+
+<style>
+    .closePassPop {
+        position: absolute;
+        bottom: -50px;
+        height: 32px;
+        font-size: 14px;
+        line-height: 13px;
+        right: 90px;
+    }
+
+    .passInput {
+        padding: 0;
+    }
+
+    .RolePopup {
+        max-width: 50% !important;
+    }
+
+    a.close-button {
+        float: right;
+        right: 10px;
+    }
+
+    .custom-header {
+        height: 45px;
+        padding: 10px;
+    }
+
+    .RolePopup .row {
+        height: 50px;
+    }
+
+    .editPassBtn {
+        font-size: 14px;
+        height: 30px;
+    }
+
+    .my-style {
+        min-width: 80%;
+        vertical-align: middle;
+    }
+</style>
+
+<style>
+    .closePassPop {
+        position: absolute;
+        bottom: -50px;
+        height: 32px;
+        font-size: 14px;
+        line-height: 13px;
+        right: 90px;
+    }
+
+    .passInput {
+        padding: 0;
+    }
+
+    .RolePopup {
+        max-width: 50% !important;
+    }
+
+    a.close-button {
+        float: right;
+        right: 10px;
+    }
+
+    .custom-header {
+        height: 45px;
+        padding: 10px;
+    }
+
+    .RolePopup .row {
+        height: 50px;
+    }
+
+    .editPassBtn {
+        font-size: 14px;
+        height: 30px;
+    }
+
+    .my-style {
+        min-width: 80%;
+        vertical-align: middle;
+    }
+</style>
+
+

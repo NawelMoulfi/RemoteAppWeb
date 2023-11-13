@@ -1,0 +1,95 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = Client
+build_property.RootNamespace = Client
+build_property.ProjectDir = C:\Users\bmlab\source\repos\RemoteAppWeb\Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\bmlab\source\repos\RemoteAppWeb\Client
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Layout/LoginDisplay.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTG9naW5EaXNwbGF5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Pages/Counter.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Pages/Entries/EntriesGrid.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFbnRyaWVzXEVudHJpZXNHcmlkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Pages/Folders/FoldersGrid.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xGb2xkZXJzXEZvbGRlcnNHcmlkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xJbmRleC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Pages/RapportIntervention/ClientsGrid.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSYXBwb3J0SW50ZXJ2ZW50aW9uXENsaWVudHNHcmlkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Pages/RapportIntervention/RapportGrid.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSYXBwb3J0SW50ZXJ2ZW50aW9uXFJhcHBvcnRHcmlkLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Pages/Roles/RolesGrid.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSb2xlc1xSb2xlc0dyaWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Pages/Users/UsersGrid.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVc2Vyc1xVc2Vyc0dyaWQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-4kdmjuawjh
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-b3bxtejbwi
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Areas/Identity/Pages/Account/LogOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dPdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Areas/Identity/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmlab/source/repos/RemoteAppWeb/Client/Components/Pages/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

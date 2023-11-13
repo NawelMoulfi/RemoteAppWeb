@@ -1,0 +1,197 @@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+
+@inherits LayoutComponentBase
+
+
+@using IconType = Blazored.Toast.Configuration.IconType 
+
+@namespace RemoteAppWeb.Shared
+ <CascadingAuthenticationState>
+<div class="page">
+<div class="ex1 sidebar SideBarMenuLayout">
+    <NavMenu />
+</div>
+
+    <div class="main">
+        <div class="top-row px-4">
+           <ul class="nav flex-column float-md-right">
+        <li class="nav-item px-3">
+          
+            <AuthorizeView>
+                <Authorized>
+
+                   
+                    <a style=" cursor: pointer;" href="Parametrage"  > <span  class="oi oi-cog" aria-hidden="true"> | </span> </a>
+                    <a style=" cursor: pointer;" href="Logout"  > (@context.User.Identity.Name) <span class="oi oi-account-login"></span> </a>
+                </Authorized>
+                <NotAuthorized>
+                    <a style=" cursor: pointer;"href="Login" >Se Connecter</a>
+                    <span class="oi oi-account-logout" aria-hidden="true"></span>
+                </NotAuthorized>
+            </AuthorizeView>
+          
+        </li>
+    </ul>
+        </div>
+
+    
+
+        <div class="content px-4">
+            @Body
+        </div>
+    </div>
+</div>
+</CascadingAuthenticationState>
+        <style>
+    body {
+        /*background: #f9f8f8;*/
+        background: #fff;
+    }
+    @*.wrCount:before {
+        content:"@rdvCount";
+    }*@
+   
+    .PageHeader {
+        color: #2163ac;
+        border-bottom: 1px solid #2163ac;
+        margin-bottom: 10px;
+        font-size: 26px;
+    }
+    .TopBar {
+        width: 100%;
+        height: 30px;
+        /*background: #587291;*/
+        background: #00bbf9;
+        position: absolute;
+        z-index: 10;
+    }
+
+        .TopBar li a, .TopBar li span {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .TopBar ul, .ex1.TopBar li {
+            height: 100%;
+        }
+
+    span.oi {
+        line-height: 25px;
+        cursor: pointer;
+    }
+
+    .sidebar {
+        /*background-image: linear-gradient(180deg, rgb(86 139 239) 0%, #567ed8 70%);*/
+        background: rgba(154, 154, 135, 0.16);
+        /*background: #1CCAD8;*/
+        background: #00bbf9;
+        border-right: 1px solid #a2a29b59;
+        /*border-right: 1px solid #fff;*/
+    }
+
+    .main {
+        padding-top: 0px;
+    }
+
+    .EditPatientPopup {
+        max-width: 1200px !important;
+        height: calc(100vh - 3.5rem);
+    }
+
+    .SaveBtn {
+        position: absolute;
+        bottom: -48px;
+        right: 90px;
+        padding: .25rem .5rem;
+        font-size: .875rem;
+        line-height: 1.5;
+        border-radius: .2rem;
+    }
+
+    a.close-button.oi.oi-x.text-white {
+        float: right;
+        right: 10px;
+    }
+
+    .custom-header.bg-primary.text-white.w-100 {
+        height: 45px;
+        padding: 10px;
+    }
+
+    .card-body {
+        padding-top: 5px !important;
+    }
+
+    .TabCount:before {
+        position: absolute;
+        background: red;
+        padding: 0px 4px;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 12px;
+    }
+
+    tr.table-dark td {
+        border: 0px;
+        background-color: #5fa2e438;
+        border-right: 1px solid #5fa2e48c;
+    }
+
+    .table-dark {
+        color: #333;
+        background-color: #5fa2e438 !important;
+    }
+
+    .dxbs-table tr:nth-child(even) {
+        background-color: #5fa2e438;
+        color: #333;
+    }
+   .dxbs-sc-timeline .dxbs-sc-timecells-container table tr:nth-child(even) {
+        background-color: #5fa2e438;
+        color: #333;
+    }
+
+    .OrdPopup {
+        max-width: 95% !important;
+        height: 600px;
+        max-height: 600px;
+    }
+
+    .WRPopup {
+        float: right;
+        min-width: 700px;
+        width: 40%;
+        min-height: 500px;
+        overflow: auto;
+    }
+    @*.wrContainer:before {
+        content: "@rdvCount";
+        position: absolute;
+        z-index: 9;
+        background: red;
+        border-radius: 100%;
+        padding: 0 5px;
+        color: #fff;
+        right: 175px;
+        font-size: 12px;
+    }*@
+    .wrContainer {
+        position: absolute;
+        z-index: 9;
+        background: red;
+        border-radius: 100%;
+        padding: 0 5px;
+        color: #fff;
+        right: 175px;
+        font-size: 12px;
+        width: 17px;
+        height: 17px;
+
+        float: left;
+    }
+
+    
+
+    
+
+</style>

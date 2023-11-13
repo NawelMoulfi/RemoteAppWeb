@@ -1,0 +1,265 @@
+@page "/Rapports"
+@inject IJSRuntime JSRuntime
+
+@using DevExpress.Blazor
+@using Shared.
+
+<h3 style="color: #2163ac" class="PageHeader"> Les Rapports D'intervention</h3>
+
+<div class="GridActions">
+
+    <DxButton RenderStyle="ButtonRenderStyle.Dark" @onclick="RefreshRapports" RenderStyleMode="ButtonRenderStyleMode.Outline" Text="Actualiser" SizeMode="@SizeMode.Small" IconCssClass="undo" style="margin: 0.5em;" />
+   
+</div>
+
+<DxGrid @ref="Grid"
+        Data="@RapportInterventions"
+        ShowFilterRow="true"
+        PagerNavigationMode="PagerNavigationMode.InputBox"
+        PageSizeSelectorVisible="true"
+        PageSizeSelectorAllRowsItemVisible="true"
+        CustomizeEditModel="Grid_CustomizeEditModel"
+        EditModelSaving="Grid_EditModelSaving"
+        DataItemDeleting="Grid_DataItemDeleting"
+        PageSizeSelectorItems="@(new int[] { 5,10,20 })"
+       >
+    <Columns>
+        <DxGridCommandColumn Width="160px" />
+        
+        <DxGridDataColumn FieldName="@nameof(RapportIntervention.RapportId)" Caption="Plus " Width="150px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+            <CellDisplayTemplate>
+                @{
+                    var rapport =  ((context.DataItem as RapportIntervention));
+                }
+                <button class="btn btn-primary" @onclick="@((e) => OpenMaterielPopup(e, rapport))">
+                    Matériel
+                </button>
+            </CellDisplayTemplate>
+        </DxGridDataColumn>
+
+        <DxGridDataColumn FieldName="@nameof(RapportIntervention.RapportId)" Caption="Pdf " Width="150px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+            <CellDisplayTemplate>
+                <button class="btn btn-primary">
+                    Rapport
+                </button>
+            </CellDisplayTemplate>
+        </DxGridDataColumn>
+        
+        <DxGridDataColumn FieldName="@nameof(RapportIntervention.RapportId)" Caption="Id " Width="80px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+
+        <DxGridDataColumn FieldName="@nameof(RapportIntervention.Num)" Caption="Numéro de Rapport " Width="90px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+
+        <DxGridDataColumn FieldName="@nameof(RapportIntervention.Operation)" Caption="Opération " Width="110px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+
+        <DxGridDataColumn FieldName="@nameof(RapportIntervention.CreatedDate)" Caption="Date de Creation " Width="130px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+
+        <DxGridDataColumn FieldName="@nameof(RapportIntervention.Logiciel)" Caption="Logiciel " Width="130px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+
+       @* <DxGridDataColumn FieldName="@nameof(RapportIntervention.CreatedByUser.UserNom)" Caption="User " Width="170px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>*@
+
+        <DxGridDataColumn FieldName="@nameof(RapportIntervention.CommentaireTraveaux)" Caption="Commentaire des traveaux effectués " Width="250px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+
+        <DxGridDataColumn FieldName="@nameof(RapportIntervention.AutreInformation)" Caption="Autre Informatons " Width="300px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        </DxGridDataColumn>
+
+    </Columns>
+    <EditFormTemplate  Context="EditFormContext" >
+        @{
+            var rapport = (RapportIntervention)EditFormContext.EditModel;
+        }
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <DxFormLayout Id="EditForm" CssClass="w-100">
+            <DxFormLayoutItem Caption="Numéro de rapport:" ColSpanMd="6">
+                <DxSpinEdit @bind-Value="@rapport.Num" />
+                <ValidationMessage For="@(() => rapport.Num)" />
+            </DxFormLayoutItem>
+                
+            <DxFormLayoutItem Caption="Opération:" ColSpanMd="6">
+                <DxComboBox  NullText="Selectionner ..."
+                             ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                             Data="Operations"
+                             TextFieldName="Key"
+                             ValueFieldName="Value"
+                             @bind-Value="@rapport.Operation" />
+                <ValidationMessage For="@(() => rapport.Operation)" />
+            </DxFormLayoutItem>
+                
+            <DxFormLayoutItem Caption="Logiciel:" ColSpanMd="6">
+                <DxComboBox  NullText="Selectionner ..."
+                             ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                             Data="Logiciels"
+                             TextFieldName="Key"
+                             ValueFieldName="Value"
+                             @bind-Value="@rapport.Logiciel" />
+                <ValidationMessage For="@(() => rapport.Logiciel)" />
+            </DxFormLayoutItem>
+    
+            <DxFormLayoutItem Caption="User:" ColSpanMd="6">
+                <div class="d-flex">
+                    <div class="d-inline-block">
+                        <DxComboBox  NullText="Selectionner ..."
+                                     ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                                     Data="Users"
+                                     TextFieldName="@nameof(RapportIntervention.CreatedByUser.UserNom)"
+                                    ValueFieldName="@nameof(RapportIntervention.CreatedByUser.UserId)"
+                                     @bind-Value="@rapport.CreatedByUserId" />
+                    </div>
+                    <div class="d-inline-block">
+                        <button @onclick="OpenUserPopup">+</button>
+                    </div>
+                </div>
+                <ValidationMessage For="@(() => rapport.CreatedByUserId)" />
+            </DxFormLayoutItem>
+    
+            <DxFormLayoutItem Caption="Commentaire des traveaux effecués:" ColSpanMd="6">
+                <DxMemo @bind-Text="@rapport.CommentaireTraveaux"
+                        CssClass="cw-480"
+                        Rows="5"/>
+                <ValidationMessage For="@(() => rapport.CommentaireTraveaux)" />
+            </DxFormLayoutItem>
+    
+            <DxFormLayoutItem Caption="Autre Informatons:" ColSpanMd="6">
+                <DxMemo @bind-Text="@rapport.AutreInformation"
+                        CssClass="cw-480"
+                        Rows="5"/>
+                <ValidationMessage For="@(() => rapport.AutreInformation)" />
+            </DxFormLayoutItem>
+        </DxFormLayout>
+    </EditFormTemplate>
+</DxGrid>
+
+<DxPopup Visible="@AddMaterielPopup"
+         Width="600px"
+         HorizontalAlignment="HorizontalAlignment.Center"
+         VerticalAlignment="VerticalAlignment.Top"
+         CloseOnEscape="false"
+         CloseOnOutsideClick="false"
+         ShowFooter="true">
+    <HeaderTemplate>
+        <div class="custom-header bg-primary text-white w-100">
+            <span class="demo-icon-info bg-white"></span>
+            Ajouter Materiel
+            <a class="close-button oi oi-x text-white" href="javascript:;" aria-hidden="true"
+               role="button" aria-label="Close popup" @onclick="@CloseAddMaterielPopup"></a>
+        </div>
+    </HeaderTemplate>
+    <Content>
+        <div class="row">
+            <div class="col-md-12">
+                <label for="liste des Patients">Ajouter dans le rapport : @CurrentRapport.Num / @CurrentRapport.CreatedDate </label>
+                <div class="input-group mb-1">
+                    <button @onclick="AddMaterilToRapport">Ajouter Materiel</button>
+                    <button @onclick="RefreshMaterielsRapport">Actualiser</button>
+                    <DxGrid Data="MaterielsRapport">
+                        <Columns>
+                            <DxGridDataColumn FieldName="Materiel.Code" Caption="Piece" Width="310">
+                                <CellDisplayTemplate>
+                                    @{
+                                        var Piece = (context.DataItem as MaterielRapport)?.Materiel?.Piece;
+                                    }
+                                    <span class="my-date-style">@Piece</span>
+                                </CellDisplayTemplate>
+                            </DxGridDataColumn>
+                            <DxGridDataColumn FieldName="MaterielId" Caption="Code" Width="120">
+                                <CellDisplayTemplate>
+                                    @{
+                                        var Code = (context.DataItem as MaterielRapport)?.Materiel?.Code;
+                                    }
+                                    <span class="my-date-style">@Code</span>
+                                </CellDisplayTemplate>
+                            </DxGridDataColumn>
+                            <DxGridDataColumn FieldName="Nombre" Caption="Nombre" Width="130"/>
+                        </Columns>
+                    </DxGrid>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </Content>
+    <FooterContentTemplate>
+        <DxButton RenderStyle="ButtonRenderStyle.Primary" @onclick="@CloseAddMaterielPopup" Text="Fermer" />
+    </FooterContentTemplate>
+</DxPopup>
+
+
+<DxPopup Visible="@MaterielPopup"
+         Width="600px"
+         HorizontalAlignment="HorizontalAlignment.Center"
+         VerticalAlignment="VerticalAlignment.Top"
+         CloseOnEscape="false"
+         CloseOnOutsideClick="false"
+         ShowFooter="true">
+    <HeaderTemplate>
+        <div class="custom-header bg-primary text-white w-100">
+            <span class="demo-icon-info bg-white"></span>
+            Ajouter Materiel
+            <a class="close-button oi oi-x text-white" href="javascript:;" aria-hidden="true"
+               role="button" aria-label="Close popup" @onclick="() =>MaterielPopup = false" ></a>
+        </div>
+    </HeaderTemplate>
+    <Content>
+        <div class="row">
+            <div class="col-md-12">
+                <label for="liste des Patients">Ajouter dans le rapport : @CurrentRapport.Num / @CurrentRapport.CreatedDate </label>
+                <EditForm Context="EditFormContext" OnValidSubmit="@HandleValidSubmit" Model="@MaterielRapport1">
+                    <div class="input-group mb-1">
+                        <DxComboBox  NullText="Selectionner La piece"
+                                     ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
+                                     Data="Materiels"
+                                     TextFieldName="@nameof(Materiel.Piece)"
+                                     ValueFieldName="@nameof(Materiel.MaterielId)"
+                                     @bind-Value="@MaterielRapport1.MaterielId" />
+                        <DxSpinEdit @bind-Value="@MaterielRapport1.Nombre"
+                                    NullText="Nombre de pieces"/>
+                        <ValidationMessage For="@(() => MaterielRapport1.Nombre)"/>
+                    </div>
+                    <DxButton SubmitFormOnClick="true" Text="Enregistrer" RenderStyle="ButtonRenderStyle.Secondary" />
+                </EditForm>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </Content>
+    <FooterContentTemplate>
+        <DxButton RenderStyle="ButtonRenderStyle.Primary" Text="Fermer"  Click="() => MaterielPopup=true" />
+    </FooterContentTemplate>
+</DxPopup>
+
+
+<DxPopup Visible="@UserPopup"
+         Width="85%"
+         HorizontalAlignment="HorizontalAlignment.Center"
+         VerticalAlignment="VerticalAlignment.Top"
+         CloseOnEscape="false"
+         CloseOnOutsideClick="false"
+         ShowFooter="true">
+    <HeaderTemplate>
+        <div class="custom-header bg-primary text-white w-100">
+            <span class="demo-icon-info bg-white"></span>
+            Users
+            <a class="close-button oi oi-x text-white" href="javascript:;" aria-hidden="true"
+               role="button" aria-label="Close popup" @onclick="CloseUserPopup" ></a>
+        </div>
+    </HeaderTemplate>
+    <Content>
+        <ClientsGrid />
+    </Content>
+    <FooterContentTemplate>
+        <DxButton RenderStyle="ButtonRenderStyle.Primary" Text="Fermer"  Click="() => UserPopup=true" />
+    </FooterContentTemplate>
+</DxPopup>
+
+<style>
+    #EditForm {
+    width: 90% !important;   
+    }
+</style>
