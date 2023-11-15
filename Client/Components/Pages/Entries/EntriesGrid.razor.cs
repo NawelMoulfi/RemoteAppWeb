@@ -35,7 +35,8 @@ namespace RemoteApp.Pages.Entries
 
         [Inject]
         private IEntryDataService EntryService { get; set; }
-
+       // [Parameter]
+        //public EventCallBack<bool> CloseEventCallBack { get; set; }
       
 
         public List<EntryDto> Entrieslist { get; set; }
@@ -54,11 +55,13 @@ namespace RemoteApp.Pages.Entries
         public bool CanDelete { get; set; }
         List<KeyValuePair<string, int>> EntryTypes { get; set; }
         List<KeyValuePair<string, int>> EntryStatuses { get; set; }
-        /*protected async override void OnInitialized()
+        protected async override Task OnInitializedAsync()
         {
-        
-          
-        }*/
+
+            await RefreshGrid();
+            StateHasChanged(); // This might not be needed, see if removing it resolves the issue
+            await base.OnInitializedAsync();
+        }
 
         public List<KeyValuePair<string, int>> GetEnumListEntryType<T>()
         {
@@ -109,33 +112,41 @@ namespace RemoteApp.Pages.Entries
                 //base.OnInitialized();
             }
         }
-        void OnRowUpdating(EntryDto x, Dictionary<string, object> newValue)
+        async Task OnRowUpdating(EntryDto x, Dictionary<string, object> newValue)
         {
-            EntryService.UpdateEntry(x);
-            RefreshGrid();
+            await EntryService.UpdateEntry(x);
+
+            await RefreshGrid();
+            StateHasChanged();
         }
        
 
-        void OnRowRemoving(EntryDto x)
+        async Task OnRowRemoving(EntryDto x)
         {
-            
-            
-                EntryService.DeleteEntry(x.EntryId);
-                RefreshGrid();
 
-            
-          
+
+            await EntryService.DeleteEntry(x.EntryId);
+
+            await RefreshGrid();
+            StateHasChanged();
+
+
+
         }
-        void OnRowInserting(Dictionary<string, object> newValue)
+        async Task OnRowInserting(Dictionary<string, object> newValue)
         {
             var x = new EntryDto();
 
-            EntryService.UpdateEntry(x);
-            RefreshGrid();
+            await EntryService.AddEntry(x);
+
+
+            await RefreshGrid();
+            StateHasChanged();
         }
-        public void ClosePopup()
+        public async Task ClosePopup()
         {
-            RefreshGrid();
+            await RefreshGrid();
+            StateHasChanged();
             PopupVisible = false;
         }
 
@@ -157,23 +168,28 @@ namespace RemoteApp.Pages.Entries
            var entry = (EntryDto)e.EditModel;
             if (e.IsNew)
             {
-            
-                EntryService.AddEntry(entry);
+                /* FolderDto Folder = ;
+                 entry.FolderFolderName = ;*/
+                await EntryService.AddEntry(entry);
             }
              
             else
-                EntryService.UpdateEntry(entry);
+                await EntryService.UpdateEntry(entry);
 
-            RefreshGrid();
+
+            await RefreshGrid();
+            StateHasChanged();
 
         }
         async Task Grid_DataItemDeleting(GridDataItemDeletingEventArgs e)
         {
             var entry = (EntryDto)e.DataItem;
-            
-            
-                EntryService.DeleteEntry(entry.EntryId);
-                RefreshGrid();
+
+
+            await EntryService.DeleteEntry(entry.EntryId);
+
+            await RefreshGrid();
+            StateHasChanged();
 
         }
 

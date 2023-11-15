@@ -27,10 +27,14 @@ public partial class RapportGrid : ComponentBase
     IGrid Grid;
     List<KeyValuePair<string, int>> Operations { get; set; }
     List<KeyValuePair<string, int>> Logiciels { get; set; }
-    protected async override void OnInitialized()
+    protected async override Task OnInitializedAsync()
     {
-        RefreshRapports();
+
+        await RefreshRapports();
+        StateHasChanged(); // This might not be needed, see if removing it resolves the issue
+        await base.OnInitializedAsync();
     }
+
     public List<KeyValuePair<string, int>> GetEnumListOperations<T>()
     {
         var list = new List<KeyValuePair<string, int>>();
@@ -99,20 +103,22 @@ public partial class RapportGrid : ComponentBase
         var rapport = (RapportInterventionDto)e.EditModel;
         if(e.IsNew)
         {
-            RapportService.AddRapport(rapport);
-            RefreshRapports();
-
+            await RapportService.AddRapport(rapport);
+           
         }
         else
         {
-            RapportService.UpdateRapport(rapport);
-            RefreshRapports();
+            await RapportService.UpdateRapport(rapport);
+          
         }
+        await RefreshRapports();
+        StateHasChanged();
     }
     async Task Grid_DataItemDeleting(GridDataItemDeletingEventArgs e) {
         var rapport = e.DataItem as RapportInterventionDto;
-        RapportService.DeleteRapport(rapport);
-        RefreshRapports();
+        await RapportService.DeleteRapport(rapport);
+        await RefreshRapports();
+        StateHasChanged();
 
     }
     
@@ -121,7 +127,11 @@ public partial class RapportGrid : ComponentBase
         Operations = GetEnumListOperations<Operation>();
         Logiciels = GetEnumListLogiciels<Logiciel>();
         Users = (List<UserDto>)await UserService.GetAllUsers();
-       
+        foreach (var user in Users)
+        {
+            Console.WriteLine($"User Id: {user.UserId}, User Name: {user.UserNom}");
+        }
+
     }
     
     public async Task RefreshMaterielsRapport() {
@@ -138,7 +148,8 @@ public partial class RapportGrid : ComponentBase
         p.RapportInterventionId = CurrentRapport.RapportId;
         
         await MaterielRapportService.AddMaterielRapport(p);
-          RefreshMaterielsRapport();
+        await RefreshMaterielsRapport();
+        StateHasChanged();
         MaterielPopup = false;
     }
     

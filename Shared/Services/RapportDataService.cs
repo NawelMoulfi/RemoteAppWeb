@@ -23,7 +23,7 @@ namespace RemoteAppWeb.Services
             var rapportInterventionJson =
               new StringContent(JsonSerializer.Serialize(rapportIntervention), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("https://localhost:7023/api/RapportIntervention", rapportInterventionJson);
+            var response = await _httpClient.PostAsync("https://localhost:7149/api/RapportIntervention", rapportInterventionJson);
             Console.WriteLine($"Responcse code for rapportIntervention : {response.StatusCode}");
             Console.WriteLine($"Responcse contenent for rapportIntervention : {response.ReasonPhrase}");
             var responseBody = await response.Content.ReadAsStringAsync();
@@ -40,14 +40,14 @@ namespace RemoteAppWeb.Services
 
         public async Task DeleteRapport(RapportInterventionDto rapportIntervention)
         {
-            await _httpClient.DeleteAsync($"https://localhost:7023/api/RapportIntervention/{rapportIntervention.RapportId}");
+            await _httpClient.DeleteAsync($"https://localhost:7149/api/RapportIntervention/{rapportIntervention.RapportId}");
         }
 
         public async Task<IEnumerable<RapportInterventionDto>> GetAllRepports()
         {
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.GetAsync("https://localhost:7023/api/RapportIntervention");
+                var response = await httpClient.GetAsync("https://localhost:7149/api/RapportIntervention");
 
                 // Handle the HTTP response
                 if (response.IsSuccessStatusCode)
@@ -83,7 +83,7 @@ namespace RemoteAppWeb.Services
             var rapportInterventionJson =
                    new StringContent(JsonSerializer.Serialize(rapportIntervention), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PutAsync("https://localhost:7023/api/RapportIntervention", rapportInterventionJson);
+            var response = await _httpClient.PutAsync("https://localhost:7149/api/RapportIntervention", rapportInterventionJson);
             Console.WriteLine($"Responcse code of update RapportIntervention: {response.StatusCode}");
             Console.WriteLine($"Responcse contenent of update RapportIntervention : {response.ReasonPhrase}"); // Your API logic
             Console.WriteLine($"Responcse  of update RapportIntervention : {response}");

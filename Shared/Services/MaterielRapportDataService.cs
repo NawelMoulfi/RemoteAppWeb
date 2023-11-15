@@ -23,7 +23,7 @@ namespace RemoteAppWeb.Services
             var materielRapportJson =
               new StringContent(JsonSerializer.Serialize(materielRapport), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("https://localhost:7023/api/MaterielRapport", materielRapportJson);
+            var response = await _httpClient.PostAsync("https://localhost:7149/api/MaterielRapport", materielRapportJson);
             Console.WriteLine($"Responcse code materielRapport: {response.StatusCode}");
             Console.WriteLine($"Responcse contenent materielRapport : {response.ReasonPhrase}");
             var responseBody = await response.Content.ReadAsStringAsync();
@@ -42,7 +42,7 @@ namespace RemoteAppWeb.Services
         {
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.GetStreamAsync($"https://localhost:7023/api/MaterielRapport/{RapportId}");
+                var response = await httpClient.GetStreamAsync($"https://localhost:7149/api/MaterielRapport/{RapportId}");
                 var MaterielRapports = await JsonSerializer.DeserializeAsync<List<MaterielRapportDto>>(
                     response,
                     new JsonSerializerOptions { PropertyNameCaseInsensitive = true }) ;

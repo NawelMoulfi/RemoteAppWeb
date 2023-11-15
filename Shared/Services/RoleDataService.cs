@@ -20,7 +20,7 @@ namespace RemoteAppWeb.Services
             var entryJson =
              new StringContent(JsonSerializer.Serialize(role), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("https://localhost:7023/api/Role", entryJson);
+            var response = await _httpClient.PostAsync("https://localhost:7149/api/Role", entryJson);
             Console.WriteLine($"Responcse code : {response.StatusCode}");
             Console.WriteLine($"Responcse contenent : {response.ReasonPhrase}");
 
@@ -34,12 +34,12 @@ namespace RemoteAppWeb.Services
         public async Task<RoleDto> GetRole(int RoleId)
         {
             return await JsonSerializer.DeserializeAsync<RoleDto>
-             (await _httpClient.GetStreamAsync($"https://localhost:7023/api/Role/{RoleId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+             (await _httpClient.GetStreamAsync($"https://localhost:7149/api/Role/{RoleId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
         public  async Task DeleteRole(int roleId)
         {
 
-            var response  =  await _httpClient.DeleteAsync($"https://localhost:7023/api/Role/{roleId}");
+            var response  =  await _httpClient.DeleteAsync($"https://localhost:7149/api/Role/{roleId}");
             Console.WriteLine($"Responcse code for the deleted Role : {response.StatusCode}");
             Console.WriteLine($"Responcse contenent for the deleted Role : {response.ReasonPhrase}");
             Console.WriteLine($"Responcse  stream  for the deleted Role : {await response.Content.ReadAsStreamAsync()}");
@@ -49,13 +49,13 @@ namespace RemoteAppWeb.Services
         {
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.GetAsync("https://localhost:7023/api/Role");
+                var response = await httpClient.GetAsync("https://localhost:7149/api/Role");
 
                 // Handle the HTTP response
                 if (response.IsSuccessStatusCode)
                 {
-                    Console.WriteLine($"Responcse code : {response.StatusCode}");
-                    Console.WriteLine($"Responcse contenent : {response.ReasonPhrase}");
+                    Console.WriteLine($"Responcse code Get Role >>>>>>>>>>>>>> : {response.StatusCode}");
+                    Console.WriteLine($"Responcse contenent Get Role : {response.ReasonPhrase}");
                     // Deserialize the response and perform any other related actions
                     var responseStream = await response.Content.ReadAsStreamAsync();
                     var Roles = await JsonSerializer.DeserializeAsync<List<RoleDto>>(
@@ -83,7 +83,7 @@ namespace RemoteAppWeb.Services
              new StringContent(JsonSerializer.Serialize(role), Encoding.UTF8, "application/json");
 
 
-            await _httpClient.PutAsync("https://localhost:7023/api/Role", roleJson);
+            await _httpClient.PutAsync("https://localhost:7149/api/Role", roleJson);
         }
     }
 }

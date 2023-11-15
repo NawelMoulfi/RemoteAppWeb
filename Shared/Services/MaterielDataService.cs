@@ -16,7 +16,7 @@ namespace RemoteAppWeb.Services
         public async  Task<IEnumerable<MaterielDto>> GetAllMateriels()
         {
             return await JsonSerializer.DeserializeAsync<IEnumerable<MaterielDto>>
-            (await _httpClient.GetStreamAsync($"https://localhost:7023/api/Materiel"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+            (await _httpClient.GetStreamAsync($"https://localhost:7149/api/Materiel"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
     }
 }

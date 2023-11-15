@@ -2,7 +2,16 @@
 @inject IJSRuntime JSRuntime
 
 @using DevExpress.Blazor
-@using Shared.
+@using Shared.Dto
+@using RemoteApp.Pages.Users
+@namespace RemoteApp.Pages.RapportIntervention
+@if ((RapportInterventions == null) || (Users == null) || (Operations == null) || (Logiciels == null))
+{
+    <p><em>Loading ......</em></p>
+}
+else
+{
+    
 
 <h3 style="color: #2163ac" class="PageHeader"> Les Rapports D'intervention</h3>
 
@@ -26,10 +35,10 @@
     <Columns>
         <DxGridCommandColumn Width="160px" />
         
-        <DxGridDataColumn FieldName="@nameof(RapportIntervention.RapportId)" Caption="Plus " Width="150px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        <DxGridDataColumn FieldName="@nameof(RapportInterventionDto.RapportId)" Caption="Plus " Width="150px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
             <CellDisplayTemplate>
                 @{
-                    var rapport =  ((context.DataItem as RapportIntervention));
+                    var rapport =  ((context.DataItem as RapportInterventionDto));
                 }
                 <button class="btn btn-primary" @onclick="@((e) => OpenMaterielPopup(e, rapport))">
                     Matériel
@@ -37,7 +46,7 @@
             </CellDisplayTemplate>
         </DxGridDataColumn>
 
-        <DxGridDataColumn FieldName="@nameof(RapportIntervention.RapportId)" Caption="Pdf " Width="150px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        <DxGridDataColumn FieldName="@nameof(RapportInterventionDto.RapportId)" Caption="Pdf " Width="150px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
             <CellDisplayTemplate>
                 <button class="btn btn-primary">
                     Rapport
@@ -45,34 +54,33 @@
             </CellDisplayTemplate>
         </DxGridDataColumn>
         
-        <DxGridDataColumn FieldName="@nameof(RapportIntervention.RapportId)" Caption="Id " Width="80px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        <DxGridDataColumn FieldName="@nameof(RapportInterventionDto.RapportId)" Caption="Id " Width="80px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
         </DxGridDataColumn>
 
-        <DxGridDataColumn FieldName="@nameof(RapportIntervention.Num)" Caption="Numéro de Rapport " Width="90px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        <DxGridDataColumn FieldName="@nameof(RapportInterventionDto.Num)" Caption="Numéro de Rapport " Width="90px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
         </DxGridDataColumn>
 
-        <DxGridDataColumn FieldName="@nameof(RapportIntervention.Operation)" Caption="Opération " Width="110px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        <DxGridDataColumn FieldName="@nameof(RapportInterventionDto.Operation)" Caption="Opération " Width="110px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
         </DxGridDataColumn>
 
-        <DxGridDataColumn FieldName="@nameof(RapportIntervention.CreatedDate)" Caption="Date de Creation " Width="130px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        <DxGridDataColumn FieldName="@nameof(RapportInterventionDto.CreatedDate)" Caption="Date de Creation " Width="130px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
         </DxGridDataColumn>
 
-        <DxGridDataColumn FieldName="@nameof(RapportIntervention.Logiciel)" Caption="Logiciel " Width="130px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        <DxGridDataColumn FieldName="@nameof(RapportInterventionDto.Logiciel)" Caption="Logiciel " Width="130px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
         </DxGridDataColumn>
 
-       @* <DxGridDataColumn FieldName="@nameof(RapportIntervention.CreatedByUser.UserNom)" Caption="User " Width="170px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
-        </DxGridDataColumn>*@
-
-        <DxGridDataColumn FieldName="@nameof(RapportIntervention.CommentaireTraveaux)" Caption="Commentaire des traveaux effectués " Width="250px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        <DxGridDataColumn FieldName="@nameof(RapportInterventionDto.CommentaireTraveaux)" Caption="Commentaire des traveaux effectués " Width="250px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
         </DxGridDataColumn>
 
-        <DxGridDataColumn FieldName="@nameof(RapportIntervention.AutreInformation)" Caption="Autre Informatons " Width="300px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
+        <DxGridDataColumn FieldName="@nameof(RapportInterventionDto.AutreInformation)" Caption="Autre Informatons " Width="300px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false" >
+        </DxGridDataColumn>
+            <DxGridDataColumn FieldName="@nameof(RapportInterventionDto.CreatedByUserUserNom)" Caption="User " Width="300px" MinWidth="50" TextAlignment="GridTextAlignment.Center" AllowGroup="false" AllowSort="false">
         </DxGridDataColumn>
 
     </Columns>
     <EditFormTemplate  Context="EditFormContext" >
         @{
-            var rapport = (RapportIntervention)EditFormContext.EditModel;
+            var rapport = (RapportInterventionDto)EditFormContext.EditModel;
         }
         <DataAnnotationsValidator />
         <ValidationSummary />
@@ -108,8 +116,8 @@
                         <DxComboBox  NullText="Selectionner ..."
                                      ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
                                      Data="Users"
-                                     TextFieldName="@nameof(RapportIntervention.CreatedByUser.UserNom)"
-                                    ValueFieldName="@nameof(RapportIntervention.CreatedByUser.UserId)"
+                                     TextFieldName="@nameof(UserDto.UserNom)"
+                                    ValueFieldName="@nameof(UserDto.UserId)"
                                      @bind-Value="@rapport.CreatedByUserId" />
                     </div>
                     <div class="d-inline-block">
@@ -163,7 +171,7 @@
                             <DxGridDataColumn FieldName="Materiel.Code" Caption="Piece" Width="310">
                                 <CellDisplayTemplate>
                                     @{
-                                        var Piece = (context.DataItem as MaterielRapport)?.Materiel?.Piece;
+                                        var Piece = (context.DataItem as MaterielRapportDto)?.MaterielCode;
                                     }
                                     <span class="my-date-style">@Piece</span>
                                 </CellDisplayTemplate>
@@ -171,7 +179,7 @@
                             <DxGridDataColumn FieldName="MaterielId" Caption="Code" Width="120">
                                 <CellDisplayTemplate>
                                     @{
-                                        var Code = (context.DataItem as MaterielRapport)?.Materiel?.Code;
+                                        var Code = (context.DataItem as MaterielRapportDto)?.MaterielCode;
                                     }
                                     <span class="my-date-style">@Code</span>
                                 </CellDisplayTemplate>
@@ -215,8 +223,8 @@
                         <DxComboBox  NullText="Selectionner La piece"
                                      ClearButtonDisplayMode="DataEditorClearButtonDisplayMode.Auto"
                                      Data="Materiels"
-                                     TextFieldName="@nameof(Materiel.Piece)"
-                                     ValueFieldName="@nameof(Materiel.MaterielId)"
+                                     TextFieldName="@nameof(MaterielDto.Piece)"
+                                     ValueFieldName="@nameof(MaterielDto.MaterielId)"
                                      @bind-Value="@MaterielRapport1.MaterielId" />
                         <DxSpinEdit @bind-Value="@MaterielRapport1.Nombre"
                                     NullText="Nombre de pieces"/>
@@ -251,13 +259,13 @@
         </div>
     </HeaderTemplate>
     <Content>
-        <ClientsGrid />
+        <UsersGrid />
     </Content>
     <FooterContentTemplate>
-        <DxButton RenderStyle="ButtonRenderStyle.Primary" Text="Fermer"  Click="() => UserPopup=true" />
+        <DxButton RenderStyle="ButtonRenderStyle.Primary" Text="Fermer"  Click="() => UserPopup=false" />
     </FooterContentTemplate>
 </DxPopup>
-
+}
 <style>
     #EditForm {
     width: 90% !important;   

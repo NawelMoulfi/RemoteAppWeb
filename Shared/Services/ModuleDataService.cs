@@ -24,7 +24,7 @@ namespace RemoteAppWeb.Services
             var moduleJson =
               new StringContent(JsonSerializer.Serialize(module), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("https://localhost:7023/api/Module", moduleJson);
+            var response = await _httpClient.PostAsync("https://localhost:7149/api/Module", moduleJson);
             Console.WriteLine($"Responcse code : {response.StatusCode}");
             Console.WriteLine($"Responcse contenent : {response.ReasonPhrase}");
             var responseBody = await response.Content.ReadAsStringAsync();
@@ -40,20 +40,20 @@ namespace RemoteAppWeb.Services
 
         public  async Task DeleteModule(int id)
         { 
-           await _httpClient.DeleteAsync($"https://localhost:7023/api/Module/{id}");
+           await _httpClient.DeleteAsync($"https://localhost:7149/api/Module/{id}");
         }
 
         public async  Task<ModuleDto> GetModuleById(int ModuleId)
         {
             return await JsonSerializer.DeserializeAsync<ModuleDto>
-             (await _httpClient.GetStreamAsync($"https://localhost:7023/api/Module/{ModuleId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+             (await _httpClient.GetStreamAsync($"https://localhost:7149/api/Module/{ModuleId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
         public  async Task<IEnumerable<ModuleDto>> GetModules()
         {
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.GetAsync("https://localhost:7023/api/Module");
+                var response = await httpClient.GetAsync("https://localhost:7149/api/Module");
 
                 // Handle the HTTP response
                 if (response.IsSuccessStatusCode)
@@ -87,7 +87,7 @@ namespace RemoteAppWeb.Services
             var moduleJson =
                    new StringContent(JsonSerializer.Serialize(module), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PutAsync("https://localhost:7023/api/Module", moduleJson);
+            var response = await _httpClient.PutAsync("https://localhost:7149/api/Module", moduleJson);
             Console.WriteLine($"Responcse code of update module : {response.StatusCode}");
             Console.WriteLine($"Responcse contenent of update module  : {response.ReasonPhrase}"); // Your API logic
             Console.WriteLine($"Responcse  of update module  : {response}");

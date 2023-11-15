@@ -14,12 +14,13 @@ namespace Shared.Dto
 
         [Required]
         public string FolderName { get; set; }
-
+       
         public int? ParentFolderId { get; set; }
 
         public string? ParentFolderFolderName { get; set; }
-
-        public string FolderDescription { get; set; }
+       
+        public string? FolderDescription { get; set; }
+        [Required]
         public FolderStatus FolderStatus { get; set; }
 
         [NotMapped]

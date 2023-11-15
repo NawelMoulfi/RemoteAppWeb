@@ -7,6 +7,7 @@ C:\Users\bmlab\source\repos\RemoteAppWeb\Shared\obj\Debug\net8.0\Shared.Generate
 C:\Users\bmlab\source\repos\RemoteAppWeb\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
 C:\Users\bmlab\source\repos\RemoteAppWeb\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
 C:\Users\bmlab\source\repos\RemoteAppWeb\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\Users\bmlab\source\repos\RemoteAppWeb\Shared\obj\Debug\net8.0\Shared.sourcelink.json
 C:\Users\bmlab\source\repos\RemoteAppWeb\Shared\obj\Debug\net8.0\Shared.dll
 C:\Users\bmlab\source\repos\RemoteAppWeb\Shared\obj\Debug\net8.0\refint\Shared.dll
 C:\Users\bmlab\source\repos\RemoteAppWeb\Shared\obj\Debug\net8.0\Shared.pdb

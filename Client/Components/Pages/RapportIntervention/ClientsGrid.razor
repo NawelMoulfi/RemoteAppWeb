@@ -2,6 +2,11 @@
 @using Shared.Dto
 @using DevExpress.Blazor
 @namespace RemoteApp.Pages.RapportIntervention
+@if(Clients == null)
+{
+    <p><em>Loading ......</em></p>
+    
+}else{
 <div class="GridActions">
     <DxButton RenderStyle="ButtonRenderStyle.Dark" @onclick="RefreshGrid" RenderStyleMode="ButtonRenderStyleMode.Outline" Text="Actualiser" SizeMode="@SizeMode.Small" IconCssClass="undo" style="margin: 0.5em;" />
 </div>
@@ -37,8 +42,7 @@
         @{
             var client = (ClientDto)EditFormContext.EditModel;
         }
-        <DataAnnotationsValidator />
-        <ValidationSummary />
+       
         <DxFormLayout Id="EditForm" CssClass="w-100">
             <DxFormLayoutItem Caption="PID:" ColSpanMd="6">
                 <DxTextBox @bind-Text="@client.PID" />
@@ -72,6 +76,7 @@
         </DxFormLayout>
     </EditFormTemplate>
 </DxGrid>
+}
 
 <style>
     .closePassPop {

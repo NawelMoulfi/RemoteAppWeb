@@ -9,7 +9,10 @@
 @using RemoteAppWeb.Helpers
 @namespace RemoteApp.Pages.Roles
 
-
+@if (ListRoles == null)
+{
+   <p><em>Loading .....</em></p> 
+}else{
 <h3 style="color: #2163ac" class="PageHeader">Roles</h3>
 
 <div class="GridActions">
@@ -44,6 +47,8 @@
         <DxDataGridColumn Field="RoleName" Caption="Nom" />
     </Columns>
     <EditFormTemplate>
+            <DataAnnotationsValidator />
+            <ValidationSummary />
         <DxPopup Visible="PopupVisible"
                  Width="100%"
                  HorizontalAlignment="HorizontalAlignment.Center"
@@ -134,3 +139,4 @@
         </DxPopup>
     </EditFormTemplate>
 </DxDataGrid>
+}

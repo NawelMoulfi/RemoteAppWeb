@@ -1,0 +1,321 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\client\\components\\pages\\folders\\foldersgrid.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\folders\\foldersgrid.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\client\\components\\pages\\entries\\entriesgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\entries\\entriesgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\client\\components\\pages\\folders\\foldersgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\folders\\foldersgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\client\\components\\pages\\rapportintervention\\rapportgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\rapportintervention\\rapportgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\client\\components\\pages\\rapportintervention\\clientsgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\rapportintervention\\clientsgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\client\\components\\pages\\entries\\entriesgrid.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\entries\\entriesgrid.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\client\\components\\pages\\roles\\rolesgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\roles\\rolesgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\client\\components\\pages\\users\\usersgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\users\\usersgrid.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF9B624C-E291-4DFA-81BA-4789EB3AFAE1}|Shared\\Shared.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\shared\\dto\\entrydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF9B624C-E291-4DFA-81BA-4789EB3AFAE1}|Shared\\Shared.csproj|solutionrelative:shared\\dto\\entrydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF9B624C-E291-4DFA-81BA-4789EB3AFAE1}|Shared\\Shared.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\shared\\dto\\folderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF9B624C-E291-4DFA-81BA-4789EB3AFAE1}|Shared\\Shared.csproj|solutionrelative:shared\\dto\\folderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E2F029B-787F-48BA-AF0E-0BD9C4C0083E}|Server\\Server.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\server\\repositories\\rapportinterventionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E2F029B-787F-48BA-AF0E-0BD9C4C0083E}|Server\\Server.csproj|solutionrelative:server\\repositories\\rapportinterventionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E2F029B-787F-48BA-AF0E-0BD9C4C0083E}|Server\\Server.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\server\\repositories\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E2F029B-787F-48BA-AF0E-0BD9C4C0083E}|Server\\Server.csproj|solutionrelative:server\\repositories\\rolerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\client\\components\\pages\\users\\usersgrid.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\users\\usersgrid.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\client\\components\\pages\\roles\\rolesgrid.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\roles\\rolesgrid.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\client\\components\\pages\\rapportintervention\\rapportgrid.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\rapportintervention\\rapportgrid.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\client\\components\\pages\\rapportintervention\\clientsgrid.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FC0874D6-5810-4DD0-8210-5D90AD08AA6C}|Client\\Client.csproj|solutionrelative:client\\components\\pages\\rapportintervention\\clientsgrid.razor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3E2F029B-787F-48BA-AF0E-0BD9C4C0083E}|Server\\Server.csproj|c:\\users\\bmlab\\source\\repos\\remoteappweb\\server\\repositories\\entryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3E2F029B-787F-48BA-AF0E-0BD9C4C0083E}|Server\\Server.csproj|solutionrelative:server\\repositories\\entryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FolderDto.cs",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Shared\\Dto\\FolderDto.cs",
+              "RelativeDocumentMoniker": "Shared\\Dto\\FolderDto.cs",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Shared\\Dto\\FolderDto.cs",
+              "RelativeToolTip": "Shared\\Dto\\FolderDto.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-15T12:13:18.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EntryDto.cs",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Shared\\Dto\\EntryDto.cs",
+              "RelativeDocumentMoniker": "Shared\\Dto\\EntryDto.cs",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Shared\\Dto\\EntryDto.cs",
+              "RelativeToolTip": "Shared\\Dto\\EntryDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-15T12:13:24.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EntriesGrid.razor.cs",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Entries\\EntriesGrid.razor.cs",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Entries\\EntriesGrid.razor.cs",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Entries\\EntriesGrid.razor.cs",
+              "RelativeToolTip": "Client\\Components\\Pages\\Entries\\EntriesGrid.razor.cs",
+              "ViewState": "AQIAALIAAAAAAAAAAAAowL0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-15T09:55:10.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FoldersGrid.razor",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Folders\\FoldersGrid.razor",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Folders\\FoldersGrid.razor",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Folders\\FoldersGrid.razor",
+              "RelativeToolTip": "Client\\Components\\Pages\\Folders\\FoldersGrid.razor",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAIwDwAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-11-15T07:54:21.777Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ClientsGrid.razor",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\RapportIntervention\\ClientsGrid.razor",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\RapportIntervention\\ClientsGrid.razor",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\RapportIntervention\\ClientsGrid.razor",
+              "RelativeToolTip": "Client\\Components\\Pages\\RapportIntervention\\ClientsGrid.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-11-15T10:20:16.135Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "RapportGrid.razor",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\RapportIntervention\\RapportGrid.razor",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\RapportIntervention\\RapportGrid.razor",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\RapportIntervention\\RapportGrid.razor",
+              "RelativeToolTip": "Client\\Components\\Pages\\RapportIntervention\\RapportGrid.razor",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAIwEoAAADeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-11-15T07:54:18.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FoldersGrid.razor.cs",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Folders\\FoldersGrid.razor.cs",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Folders\\FoldersGrid.razor.cs",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Folders\\FoldersGrid.razor.cs",
+              "RelativeToolTip": "Client\\Components\\Pages\\Folders\\FoldersGrid.razor.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAA6wDgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-15T10:19:49.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RolesGrid.razor",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Roles\\RolesGrid.razor",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Roles\\RolesGrid.razor",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Roles\\RolesGrid.razor",
+              "RelativeToolTip": "Client\\Components\\Pages\\Roles\\RolesGrid.razor",
+              "ViewState": "AQIAAHEAAAAAAAAAAADwv4YAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-11-15T07:45:09.541Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsersGrid.razor",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Users\\UsersGrid.razor",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Users\\UsersGrid.razor",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Users\\UsersGrid.razor",
+              "RelativeToolTip": "Client\\Components\\Pages\\Users\\UsersGrid.razor",
+              "ViewState": "AQIAADAAAAAAAAAAAAAAADAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-11-14T14:34:59.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EntriesGrid.razor",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Entries\\EntriesGrid.razor",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Entries\\EntriesGrid.razor",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Entries\\EntriesGrid.razor",
+              "RelativeToolTip": "Client\\Components\\Pages\\Entries\\EntriesGrid.razor",
+              "ViewState": "AQIAAGsAAAAAAAAAAADwv4AAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2023-11-15T07:54:27.701Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RapportInterventionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Server\\Repositories\\RapportInterventionRepository.cs",
+              "RelativeDocumentMoniker": "Server\\Repositories\\RapportInterventionRepository.cs",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Server\\Repositories\\RapportInterventionRepository.cs",
+              "RelativeToolTip": "Server\\Repositories\\RapportInterventionRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-15T09:53:26.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "RapportGrid.razor.cs",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\RapportIntervention\\RapportGrid.razor.cs",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\RapportIntervention\\RapportGrid.razor.cs",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\RapportIntervention\\RapportGrid.razor.cs",
+              "RelativeToolTip": "Client\\Components\\Pages\\RapportIntervention\\RapportGrid.razor.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAABUAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-15T09:53:26.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ClientsGrid.razor.cs",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\RapportIntervention\\ClientsGrid.razor.cs",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\RapportIntervention\\ClientsGrid.razor.cs",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\RapportIntervention\\ClientsGrid.razor.cs",
+              "RelativeToolTip": "Client\\Components\\Pages\\RapportIntervention\\ClientsGrid.razor.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAowEEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-15T10:21:00.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RolesGrid.razor.cs",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Roles\\RolesGrid.razor.cs",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Roles\\RolesGrid.razor.cs",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Roles\\RolesGrid.razor.cs",
+              "RelativeToolTip": "Client\\Components\\Pages\\Roles\\RolesGrid.razor.cs",
+              "ViewState": "AQIAAM0AAAAAAAAAAAAAAM0AAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-15T10:22:05.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "EntryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Server\\Repositories\\EntryRepository.cs",
+              "RelativeDocumentMoniker": "Server\\Repositories\\EntryRepository.cs",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Server\\Repositories\\EntryRepository.cs",
+              "RelativeToolTip": "Server\\Repositories\\EntryRepository.cs",
+              "ViewState": "AQIAACUAAAAAAAAAAAA2wDAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-15T09:53:26.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UsersGrid.razor.cs",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Users\\UsersGrid.razor.cs",
+              "RelativeDocumentMoniker": "Client\\Components\\Pages\\Users\\UsersGrid.razor.cs",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Components\\Pages\\Users\\UsersGrid.razor.cs",
+              "RelativeToolTip": "Client\\Components\\Pages\\Users\\UsersGrid.razor.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAD4v2YAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-14T14:35:06.182Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "RoleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Server\\Repositories\\RoleRepository.cs",
+              "RelativeDocumentMoniker": "Server\\Repositories\\RoleRepository.cs",
+              "ToolTip": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Server\\Repositories\\RoleRepository.cs",
+              "RelativeToolTip": "Server\\Repositories\\RoleRepository.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAiwDoAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2023-11-15T09:53:26.748Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

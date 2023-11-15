@@ -26,7 +26,7 @@ namespace RemoteAppWeb.Services
             var entryJson =
               new StringContent(JsonSerializer.Serialize(folder), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("https://localhost:7023/api/Folder", entryJson);
+            var response = await _httpClient.PostAsync("https://localhost:7149/api/Folder", entryJson);
             Console.WriteLine($"Responcse code  of Add folder: {response.StatusCode}");
             Console.WriteLine($"Responcse contenent of Add folder : {response.ReasonPhrase}");
 
@@ -40,14 +40,14 @@ namespace RemoteAppWeb.Services
 
         public async Task DeleteFolder(int folderId)
         {
-            await _httpClient.DeleteAsync($"https://localhost:7023/api/Folder/{folderId}");
+            await _httpClient.DeleteAsync($"https://localhost:7149/api/Folder/{folderId}");
         }
 
         public  async Task<IEnumerable<FolderDto>> GetAllFolders()
         {
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.GetAsync("https://localhost:7023/api/Folder");
+                var response = await httpClient.GetAsync("https://localhost:7149/api/Folder");
 
                 // Handle the HTTP response
                 if (response.IsSuccessStatusCode)
@@ -82,7 +82,7 @@ namespace RemoteAppWeb.Services
         public async Task<FolderDto> GetFolder(int folderId)
         {
             return await JsonSerializer.DeserializeAsync<FolderDto>
-        (await _httpClient.GetStreamAsync($"https://localhost:7023/api/Folder/{folderId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+        (await _httpClient.GetStreamAsync($"https://localhost:7149/api/Folder/{folderId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
         public async Task UpdateFolder(FolderDto folder)
@@ -91,7 +91,7 @@ namespace RemoteAppWeb.Services
              new StringContent(JsonSerializer.Serialize(folder), Encoding.UTF8, "application/json");
 
 
-            await _httpClient.PutAsync("https://localhost:7023/api/Folder", folderJson);
+            await _httpClient.PutAsync("https://localhost:7149/api/Folder", folderJson);
         }
     }
 }

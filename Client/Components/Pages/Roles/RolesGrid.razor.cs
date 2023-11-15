@@ -52,12 +52,14 @@ namespace RemoteApp.Pages.Roles
         public bool CanUpdate { get; set; }
         public bool CanDelete { get; set; }
 
-     /*   protected override void OnInitialized()
+        protected async override Task OnInitializedAsync()
         {
 
-         
-           
-        }*/
+            await RefreshGrid();
+            StateHasChanged(); // This might not be needed, see if removing it resolves the issue
+            await base.OnInitializedAsync();
+        }
+
 
         public List<Resource> GetModuleEnumList()
         {
@@ -92,12 +94,13 @@ namespace RemoteApp.Pages.Roles
 
             if (CanRead)
             {
-                RefreshGrid();
+               
                 //ResourceList = Enum.GetValues(typeof(Resource)).Cast<Resource>().ToList();
                 ResourceList = GetModuleEnumList();
                 actions = GetActionEnumList();
             }
             ListRoles = await RoleService.GetRolesList();
+            StateHasChanged();
         }
 
         private async Task OnRowRemoving(RoleDto x)
@@ -108,8 +111,8 @@ namespace RemoteApp.Pages.Roles
                     Console.WriteLine($"The Role Id that should be removed  : {x.RoleId}");
                     await RoleService.DeleteRole(x.RoleId);
                     ListRoles = ListRoles.Where(v => v != x).ToArray();
-                RefreshGrid();
-
+            await RefreshGrid();
+            StateHasChanged();
 
         }
 
@@ -141,9 +144,9 @@ namespace RemoteApp.Pages.Roles
                    await RoleService.UpdateRole(p);
                 }
                 await grid.CancelRowEdit();
-                RefreshGrid();
-           
-          
+            await RefreshGrid();
+
+            StateHasChanged();
             SaveChanges(IsActionCheckedDict);
            // await InvokeAsync(StateHasChanged);
         }

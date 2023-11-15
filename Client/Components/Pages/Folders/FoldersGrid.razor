@@ -6,6 +6,13 @@
 @using Shared.Dto
 @namespace RemoteApp.Pages.Folders
 
+@if ((Folderslist == null) || (ParentFolderslist == null) || (FolderStatuses == null))
+{
+    <p><em>Loading ......</em></p>
+}
+else
+{
+    
 
 <h3 style="color: #2163ac" class="PageHeader"> Dossiers</h3>
 
@@ -19,6 +26,7 @@
             DataNavigationMode="DataGridNavigationMode.VirtualScrolling"
             PopupEditFormHeaderText="Add/Edit Dossier"
             PopupEditFormCssClass="my-style"
+                SelectedDataItem="@folder"
             PageSize="25"
             ShowFilterRow="true"
             ShowGroupPanel="false"
@@ -50,9 +58,11 @@
 
         <DxDataGridColumn Width="80px" Field="FolderId" EditorVisible="false" Caption="Id" />
         <DxDataGridColumn Width="180px" Field="FolderName" Caption="Nom dossier" />
-        
+           
+
+
         <DxDataGridColumn Width="180px" Field="FolderDescription" Caption="Description" />
-        
+          
        
        <DxDataGridComboBoxColumn Width="180px" Field="ParentFolderId"
                                   Caption="Dossier parent"
@@ -62,6 +72,8 @@
                                   ValueFieldName="@nameof(FolderDto.FolderId)">
            
         </DxDataGridComboBoxColumn>
+           
+            
 
           <DxDataGridComboBoxColumn Width="180px" Field="FolderStatusInt"
                                   AllowFilter="true"
@@ -73,9 +85,12 @@
                                   ValueFieldName="Value">
            
         </DxDataGridComboBoxColumn>
+           
+
+           
     </Columns>
 </DxDataGrid>
-
+}
 
 
 <style>

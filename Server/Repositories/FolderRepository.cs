@@ -28,7 +28,7 @@ namespace RemoteAppApi.Repositories
 
         public async Task DeleteFolder(int folderId)
         {
-            var foundFolder = await _appDbContext.Folders.FirstOrDefaultAsync(e => e.FolderId == folderId);
+            var foundFolder = await _appDbContext.Folders.Include(p => p.ParentFolder).FirstOrDefaultAsync(e => e.FolderId == folderId);
             if (foundFolder == null) return;
 
             _appDbContext.Folders.Remove(foundFolder);

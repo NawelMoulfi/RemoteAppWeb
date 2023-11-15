@@ -9,6 +9,11 @@ namespace Shared.Dto
 {
     public class RapportInterventionDto
     {
+        public RapportInterventionDto()
+        {
+            CreatedDate = DateTime.Now;
+        }
+
         public long RapportId { get; set; }
         public DateTime? CreatedDate { get; set; }
         [Required]
@@ -18,12 +23,14 @@ namespace Shared.Dto
         public Operation Operation { set; get; }
       
 
-        public string CommentaireTraveaux { set; get; }
+        public string? CommentaireTraveaux { set; get; }
 
-        public string AutreInformation { set; get; }
+        public string? AutreInformation { set; get; }
+
+        [Required]
         public Logiciel Logiciel { set; get; }
-        public string CreatedByUserUserNom { get; set; }
-        public int CreatedByUserId { get; set; }
+        public string? CreatedByUserUserNom { get; set; }
+        public int? CreatedByUserId { get; set; }
 
     }
     public enum Operation

@@ -19,9 +19,10 @@ namespace RemoteApp.Data.Models
         public int? ParentFolderId { get; set; }
 
         [ForeignKey("ParentFolderId")]
-      // public virtual Folder ParentFolder { get; set; }
+       public virtual Folder? ParentFolder { get; set; }
 
-        public string FolderDescription { get; set; }
+        public string? FolderDescription { get; set; }
+        [Required]
         public FolderStatus FolderStatus { get; set; }
 
         [NotMapped]

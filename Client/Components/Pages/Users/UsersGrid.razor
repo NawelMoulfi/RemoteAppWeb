@@ -5,7 +5,11 @@
 @using DevExpress.Blazor
 @using Shared.Dto
 @namespace RemoteApp.Pages.Users
-
+@if ((Userslist == null) || (Roleslist == null) || (UserStatuses == null))
+{
+    <p><em>Loading .....</em></p>
+}
+else{
 
 <h3 style="color: #2163ac" class="PageHeader"> Users</h3>
 
@@ -62,19 +66,20 @@
         <DxDataGridComboBoxColumn Width="180px" Field="RoleId"
                                   Caption="Role"
                                   Data="@Roleslist"
-                                
                                   AllowGroup="true"
-                                  TextFieldName="@nameof(user.RoleRoleName)"
-                                  ValueFieldName="@nameof(user.RoleId)"
+                                  TextFieldName="@nameof(RoleDto.RoleName)"
+                                  ValueFieldName="@nameof(RoleDto.RoleId)"
                                  >
-            <EditTemplate>
+            <EditTemplate Context="EditFormContext">
+                    <DataAnnotationsValidator />
+                    <ValidationSummary />
                 <DxComboBox Data="Roleslist"
                             AllowUserInput="true"
                             ListRenderMode="ListRenderMode.Virtual"
                             FilteringMode="DataGridFilteringMode.Contains"
                             ClearButtonDisplayMode="@DataEditorClearButtonDisplayMode.Auto"
-                            TextFieldName="@nameof(user.RoleRoleName)"
-                            ValueFieldName="@nameof(user.RoleId)"
+                            TextFieldName="@nameof(RoleDto.RoleName)"
+                            ValueFieldName="@nameof(RoleDto.RoleId)"
                             @bind-Value="selectedvalue">
                     <DxListEditorColumn FieldName="RoleId" />
                     <DxListEditorColumn FieldName="RoleName" />
@@ -125,7 +130,7 @@
         <DxButton RenderStyle="ButtonRenderStyle.Primary" @onclick="@ClosePopup" Text="Fermer" />
     </FooterTemplate>
 </DxPopup>
-
+}
 
 <style>
     .closePassPop {

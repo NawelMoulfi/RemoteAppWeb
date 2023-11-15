@@ -1,8 +1,9 @@
 ﻿@page "/Logout"
-@using Data.Models.Common;
 @using Microsoft.AspNetCore.Identity
+@using Shared.Dto;
+
 @attribute [IgnoreAntiforgeryToken]
-@inject SignInManager<User> SignInManager
+@inject SignInManager<UserDto> SignInManager
 @functions {
     public async Task<IActionResult> OnPost()
     {

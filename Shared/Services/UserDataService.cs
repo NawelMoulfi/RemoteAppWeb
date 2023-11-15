@@ -27,7 +27,7 @@ namespace RemoteAppWeb.Services
             var userJson =
               new StringContent(JsonSerializer.Serialize(user), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("https://localhost:7023/api/User", userJson);
+            var response = await _httpClient.PostAsync("https://localhost:7149/api/User", userJson);
             Console.WriteLine($"Responcse code : {response.StatusCode}");
             Console.WriteLine($"Responcse contenent : {response.ReasonPhrase}");
             var responseBody = await response.Content.ReadAsStringAsync();
@@ -43,14 +43,14 @@ namespace RemoteAppWeb.Services
 
         public async  Task DeleteUser(int userId)
         {
-            await _httpClient.DeleteAsync($"https://localhost:7023/api/User/{userId}");
+            await _httpClient.DeleteAsync($"https://localhost:7149/api/User/{userId}");
         }
 
         public async  Task<IEnumerable<UserDto>> GetAllUsers()
         {
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.GetAsync("https://localhost:7023/api/User");
+                var response = await httpClient.GetAsync("https://localhost:7149/api/User");
 
                 // Handle the HTTP response
                 if (response.IsSuccessStatusCode)
@@ -91,7 +91,7 @@ namespace RemoteAppWeb.Services
             var userJson =
                    new StringContent(JsonSerializer.Serialize(user), Encoding.UTF8, "application/json");
 
-                var response = await _httpClient.PutAsync("https://localhost:7023/api/User", userJson);
+                var response = await _httpClient.PutAsync("https://localhost:7149/api/User", userJson);
                 Console.WriteLine($"Responcse code of update user : {response.StatusCode}");
                 Console.WriteLine($"Responcse contenent of update user  : {response.ReasonPhrase}"); // Your API logic
             Console.WriteLine($"Responcse  of update user  : {response}");
@@ -103,7 +103,7 @@ namespace RemoteAppWeb.Services
         public async Task<UserDto> GetUser(int userId)
         {
             return await JsonSerializer.DeserializeAsync<UserDto>
-             (await _httpClient.GetStreamAsync($"https://localhost:7023/api/User/{userId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+             (await _httpClient.GetStreamAsync($"https://localhost:7149/api/User/{userId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
      /*  public async Task SaveNewPassword(int uId, string password)
         {
@@ -127,7 +127,7 @@ namespace RemoteAppWeb.Services
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
 
                 // Make a POST request to the ChangePassword endpoint
-                var response = await _httpClient.PostAsync("https://localhost:7023/api/User/changepassword", content);
+                var response = await _httpClient.PostAsync("https://localhost:7149/api/User/changepassword", content);
 
                 if (response.IsSuccessStatusCode)
                 {
@@ -188,7 +188,7 @@ namespace RemoteAppWeb.Services
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
                 //_httpClient.BaseAddress = new Uri("https://localhost:7023/");
                 // Find the user by credentials (username and password)
-                var response = await _httpClient.PostAsync($"https://localhost:7023/api/User/login", content);
+                var response = await _httpClient.PostAsync($"https://localhost:7149/api/User/login", content);
                 Console.WriteLine($"Responcse code : {response.StatusCode}");
                 Console.WriteLine($"Responcse contenent : {response.ReasonPhrase}");
                 Console.WriteLine($"Responcse : {response}");

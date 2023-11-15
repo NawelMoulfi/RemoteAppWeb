@@ -32,8 +32,8 @@ using RemoteApp.Data.Models;
 
 namespace RemoteApp.Data
 {
-    [AuditDbContext(Mode = AuditOptionMode.OptIn, IncludeEntityObjects = false, AuditEventType = "{database}_{context}")]
-    public class ApplicationDbContext : AuditDbContext
+    //[AuditDbContext(Mode = AuditOptionMode.OptIn, IncludeEntityObjects = false, AuditEventType = "{database}_{context}")]
+    public class ApplicationDbContext : DbContext
     {
 
       

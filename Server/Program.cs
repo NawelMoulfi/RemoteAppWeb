@@ -2,19 +2,35 @@ using RemoteApp.Data;
 using RemoteAppApi.Repositories.Contracts;
 using RemoteAppApi.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Localization;
+using System.Globalization;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(builder =>
     {
-        builder.WithOrigins("https://localhost:7087")
+        builder.WithOrigins("https://localhost:7001")
                .AllowAnyMethod()
                .AllowAnyHeader();
     });
 });
+
+
+// Add services to the container.
+/*builder.Services.AddControllers()
+        .AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.PropertyNamingPolicy = null;
+        });
+
+// Set supported cultures
+builder.Services.Configure<RequestLocalizationOptions>(options =>
+{
+    options.DefaultRequestCulture = new RequestCulture("us_english");
+    options.SupportedCultures = new List<CultureInfo> { new CultureInfo("us_english") };
+    options.SupportedUICultures = new List<CultureInfo> { new CultureInfo("us_english") };
+});*/
 
 
 builder.Services.AddControllers();
@@ -52,7 +68,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+app.UseCors();
 app.UseHttpsRedirection();
 
 app.UseAuthorization();

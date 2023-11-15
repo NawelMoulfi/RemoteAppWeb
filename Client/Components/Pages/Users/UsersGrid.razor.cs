@@ -47,10 +47,14 @@ namespace RemoteApp.Pages.Users
         public bool CanUpdate { get; set; }
         public bool CanDelete { get; set; }
         List<KeyValuePair<string, int>> UserStatuses { get; set; }
-       /* protected  async override void OnInitialized()
+        protected async override Task OnInitializedAsync()
         {
-           
-        }*/
+
+            await RefreshGrid();
+            StateHasChanged(); // This might not be needed, see if removing it resolves the issue
+            await base.OnInitializedAsync();
+        }
+
 
         public List<KeyValuePair<string, int>> GetEnumList<T>()
         {
@@ -82,7 +86,7 @@ namespace RemoteApp.Pages.Users
                 UserStatuses = GetEnumList<UserStatus>();
                 //base.OnInitialized();
             }
-          
+            StateHasChanged();
         }
         async Task OnRowUpdating(UserDto user, Dictionary<string, object> newValue)
         {
@@ -96,21 +100,21 @@ namespace RemoteApp.Pages.Users
          
             await  UserService.UpdateUser(user);
             // OnInitialized();
-            RefreshGrid();
-            //StateHasChanged();
+            await RefreshGrid();
+            StateHasChanged();
         }
         async Task OnRowRemoving(UserDto x)
         {
             
           
                await  UserService.DeleteUser(x.UserId);
-               // OnInitialized();
-               RefreshGrid();
-               // StateHasChanged();
+            // OnInitialized();
+            await RefreshGrid();
+                StateHasChanged();
 
          
         }
-        void OnRowInserting(Dictionary<string, object> newValue)
+        async Task OnRowInserting(Dictionary<string, object> newValue)
         {
             var user = new UserDto();
           
@@ -122,13 +126,13 @@ namespace RemoteApp.Pages.Users
             Console.WriteLine($"The new user Login: {user.UserLogin}");
 
 
-            UserService.AddUser(user);
-            RefreshGrid();
-            //StateHasChanged();
+            await UserService.AddUser(user);
+            await RefreshGrid();
+            StateHasChanged();
         }
-        public void ClosePopup()
+        public async Task ClosePopup()
         {
-            RefreshGrid();
+            await RefreshGrid();
             PopupVisible = false;
         }
         public void ChangePassword(UserDto user)
@@ -136,11 +140,11 @@ namespace RemoteApp.Pages.Users
             PopupVisible = true;
             userId = user.UserId;
         }
-        public void SaveNewPassword()
+        public async Task SaveNewPassword()
         {
             if (newPassword == confirmedPassword)
             {
-                UserService.SaveNewPassword(userId, newPassword);
+                await UserService.SaveNewPassword(userId, newPassword);
             }
         }
         void Grid_CustomizeEditModel(GridCustomizeEditModelEventArgs e)
@@ -161,29 +165,29 @@ namespace RemoteApp.Pages.Users
             if (e.IsNew)
             {
 
-                UserService.AddUser(entry);
+                await UserService.AddUser(entry);
             }
 
             else
-                UserService.UpdateUser(entry);
+                await UserService.UpdateUser(entry);
 
-            RefreshGrid();
-           // StateHasChanged();
+            await RefreshGrid();
+            StateHasChanged();
 
         }
         async Task Grid_DataItemDeleting(GridDataItemDeletingEventArgs e)
         {
             var entry = (UserDto)e.DataItem;
-         
-        
-                UserService.DeleteUser(entry.UserId);
-                RefreshGrid();
-           
- 
+
+
+            await UserService.DeleteUser(entry.UserId);
+            await RefreshGrid();
+            StateHasChanged();
+
         }
         private void SetNewValues(UserDto user, Dictionary<string, object> newValue)
         {
-            user.PasswordChanged = false;
+           // user.PasswordChanged = false;
           
             //user.Role = null;
             Console.WriteLine($"The dictionnary : {newValue}");

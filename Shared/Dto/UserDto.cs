@@ -16,23 +16,25 @@ namespace Shared.Dto
         [Required]
         public string UserLogin { get; set; }
 
-        public bool PasswordChanged { get; set; }
-        public string UserPassword { get; set; }
-        public string UserNom { get; set; }
+        public bool? PasswordChanged { get; set; }
+        public string? UserPassword { get; set; }
+        public string? UserNom { get; set; }
 
-        public string UserPrenom { get; set; }
+        public string? UserPrenom { get; set; }
 
         [NotMapped]
         public string UserNomPrenom => string.Format("{0} {1}", UserNom, UserPrenom);
-
+        [Required]
         public UserStatus UserStatus { get; set; }
 
         [NotMapped]
         public int UserStatusInt => (int)UserStatus;
-        public string UserPhone { get; set; }
-        public string UserEmail { get; set; }
+        public string? UserPhone { get; set; }
+        public string? UserEmail { get; set; }
+        [Required]
         public int RoleId { get; set; }
-        public string RoleRoleName { get; set; }
+        public string? RoleRoleName { get; set; }
+        [Required]
         public int UserMaxCapacity { get; set; }
     }
     public enum UserStatus

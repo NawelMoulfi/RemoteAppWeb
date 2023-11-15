@@ -23,7 +23,7 @@ namespace RemoteAppWeb.Services
             var moduleActionRoleJson =
               new StringContent(JsonSerializer.Serialize(moduleActionRole), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("https://localhost:7023/api/ModuleActionRole", moduleActionRoleJson);
+            var response = await _httpClient.PostAsync("https://localhost:7149/api/ModuleActionRole", moduleActionRoleJson);
             Console.WriteLine($"Responcse code  moduleActionRole : {response.StatusCode}");
             Console.WriteLine($"Responcse contenent  moduleActionRole: {response.ReasonPhrase}");
             var responseBody = await response.Content.ReadAsStringAsync();
@@ -39,11 +39,11 @@ namespace RemoteAppWeb.Services
         public async Task<ModuleActionRoleDto> GetModuleActionRoleByRoleAndModuleActionId(int RoleId, int ModuleActionId)
         {
             return await JsonSerializer.DeserializeAsync<ModuleActionRoleDto>
-           (await _httpClient.GetStreamAsync($"https://localhost:7023/api/ModuleActionRole/role/{RoleId}/module-action/{ModuleActionId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+           (await _httpClient.GetStreamAsync($"https://localhost:7149/api/ModuleActionRole/role/{RoleId}/module-action/{ModuleActionId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
         public async Task DeleteModuleActionRole(int ModuleActionRoleId)
         {
-            await _httpClient.DeleteAsync($"https://localhost:7023/api/User/{ModuleActionRoleId}");
+            await _httpClient.DeleteAsync($"https://localhost:7149/api/User/{ModuleActionRoleId}");
         }
     }
 }

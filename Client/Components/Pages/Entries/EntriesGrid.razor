@@ -6,7 +6,10 @@
 @using Microsoft.AspNetCore.Mvc.RazorPages
 @using Shared.Dto
 @using static System.Runtime.InteropServices.JavaScript.JSType
-
+@if ((Entrieslist == null ))
+{
+    <p><em>Loading .....</em></p>
+}else{
 <h3 style="color: #2163ac" class="PageHeader"> Entrées</h3>
 
 <div class="GridActions">
@@ -38,7 +41,7 @@
                 <a class="d-block text-left" href="javascript:;" @onclick="() => OpenCommand(context)">Ouvrir</a>
             </CellDisplayTemplate>
          </DxGridDataColumn>
-        <DxGridDataColumn Width="180px" FieldName="Folder.FolderName"
+        <DxGridDataColumn Width="180px" FieldName="FolderFolderName"
                           Caption="Dossier" >
         </DxGridDataColumn>
         <DxGridDataColumn Width="180px" FieldName="EntryName" Caption="Nom entrée" />
@@ -148,11 +151,11 @@
             </DxFormLayoutItem>
 
         </DxFormLayout>
-    </EditFormTemplate>
+    </EditFormTemplate >
 </DxGrid>
 
 
-
+}
 
 <style>
     .closePassPop {

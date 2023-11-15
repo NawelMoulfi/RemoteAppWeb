@@ -40,7 +40,7 @@ namespace RemoteAppApi.Repositories
             var Entries = new List<Entry>();
 
 
-            Entries = await this._appDbContext.Entries.ToListAsync();
+            Entries = await this._appDbContext.Entries.Include(p => p.Folder).Include(p => p.CreatedByUser).ToListAsync();
             List<EntryDto> EntryDtos = new List<EntryDto>();
             foreach (var entry in Entries)
             {

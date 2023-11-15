@@ -19,10 +19,14 @@ public partial class ClientsGrid
     public IEnumerable<ClientDto> Clients { set; get; }
     IGrid Grid;
 
-   /* protected async override void OnInitialized()
+    protected async override Task OnInitializedAsync()
     {
-       // RefreshGrid();
-    }*/
+
+        await RefreshGrid();
+        StateHasChanged(); // This might not be needed, see if removing it resolves the issue
+        await base.OnInitializedAsync();
+    }
+
     void Grid_CustomizeEditModel(GridCustomizeEditModelEventArgs e) {
         var client = e.DataItem as ClientDto;
         if (client == null)
@@ -36,14 +40,16 @@ public partial class ClientsGrid
         var client = (ClientDto)e.EditModel;
         if(e.IsNew)
         {
-            ClientService.AddClient(client);
-            RefreshGrid();
+            await ClientService.AddClient(client);
+            
         }
         else
         {
-            ClientService.UpdateClient(client);
-            RefreshGrid();
+            await ClientService.UpdateClient(client);
+          
         }
+        await RefreshGrid();
+        StateHasChanged();
     }
     public async Task RefreshGrid()
     {
@@ -53,7 +59,8 @@ public partial class ClientsGrid
     async Task Grid_DataItemDeleting(GridDataItemDeletingEventArgs e) {
         var client = (ClientDto)e.DataItem;
        await  ClientService.DeleteClient(client.ClientId);
-        RefreshGrid();
-      //  OnInitialized();
+        await RefreshGrid();
+        StateHasChanged();
+        //  OnInitialized();
     }
 }

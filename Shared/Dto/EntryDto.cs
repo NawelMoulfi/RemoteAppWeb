@@ -15,27 +15,31 @@ namespace Shared.Dto
 
         [Required]
         public string EntryName { get; set; }
+        [Required]
         public EntryType EntryType { get; set; }
         public int EntryTypeInt => (int)EntryType;
-        public string ID { get; set; }
+        public string? ID { get; set; }
+ 
+        public string? Password { get; set; }
         [Required]
-        public string Password { get; set; }
-        public int CreatedByUserId { get; set; }
-        public string CreatedByUserIdUserNom { get; set; }
+        public int? CreatedByUserId { get; set; }
+        public string? CreatedByUserUserNom { get; set; }
 
-        public string CreatedByUserIdUserPrenom { get; set; }
+        public string? CreatedByUserUserPrenom { get; set; }
         [NotMapped]
-        public string CreatedByUserIdUserNomPrenom => string.Format("{0} {1}", CreatedByUserIdUserNom, CreatedByUserIdUserPrenom);
-        public string Address { get; set; }
-        public string URL { get; set; }
-        public string Description { get; set; }
-        public string Command { get; set; }
+        public string? CreatedByUserUserNomPrenom => string.Format("{0} {1}", CreatedByUserUserNom, CreatedByUserUserPrenom);
+        public string? Address { get; set; }
+        public string  ? URL { get; set; }
+        public string? Description { get; set; }
+        public string? Command { get; set; }
+        [Required]
         public EntryStatus EntryStatus { get; set; }
         public int EntryStatusInt => (int)EntryStatus;
-        public int FolderId { get; set; }
-
         [Required]
-        public string FolderFolderName { get; set; }
+        public int? FolderId { get; set; }
+
+        
+        public string? FolderFolderName { get; set; }
 
     }
     public enum EntryType

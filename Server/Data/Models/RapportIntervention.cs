@@ -19,9 +19,9 @@ public class RapportIntervention : EntityBase
     [Required]
     public Operation Operation { set; get; }
     
-    public string CommentaireTraveaux { set; get; }
+    public string? CommentaireTraveaux { set; get; }
     
-    public string AutreInformation { set; get; }
+    public string? AutreInformation { set; get; }
     [Required]
     public long Num { set; get; }
     
@@ -30,7 +30,7 @@ public class RapportIntervention : EntityBase
     
    [Required]
    [ForeignKey("CreatedByUserId")]
-   public int CreatedByUserId { set; get; }
+   public int? CreatedByUserId { set; get; }
  public virtual  User ? CreatedByUser { set; get; }
 }
 

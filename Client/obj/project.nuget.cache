@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Xd/CQSK7SBsT1NhQEJjbDlpuG9cJjIqiImFXxKKs7RfruS90OfXpkHFth6MHw0JPmWB29/xLrH9lg/4+PGNJFQ==",
+  "dgSpecHash": "VTE+6k6quhYkAFI2v1NIj3stxP/ZL2MSAQzL3VMwLuwi1dvvZQuX2oPYrxXWwgkYpGw/fjmXPikTu4TwEjx4/A==",
   "success": true,
   "projectFilePath": "C:\\Users\\bmlab\\source\\repos\\RemoteAppWeb\\Client\\Client.csproj",
   "expectedPackageFiles": [
@@ -53,6 +53,7 @@
     "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor\\2.2.0\\microsoft.aspnetcore.mvc.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\2.2.0\\microsoft.aspnetcore.mvc.razor.extensions.2.2.0.nupkg.sha512",
     "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.aspnetcore.mvc.razorpages\\2.2.5\\microsoft.aspnetcore.mvc.razorpages.2.2.5.nupkg.sha512",
+    "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.aspnetcore.mvc.taghelpers\\2.2.0\\microsoft.aspnetcore.mvc.taghelpers.2.2.0.nupkg.sha512",
     "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.aspnetcore.mvc.viewfeatures\\2.2.0\\microsoft.aspnetcore.mvc.viewfeatures.2.2.0.nupkg.sha512",
     "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\2.2.0\\microsoft.aspnetcore.razor.language.2.2.0.nupkg.sha512",
@@ -95,8 +96,8 @@
     "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.jsinterop\\8.0.0-rc.2.23480.2\\microsoft.jsinterop.8.0.0-rc.2.23480.2.nupkg.sha512",
     "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.jsinterop.webassembly\\8.0.0-rc.2.23480.2\\microsoft.jsinterop.webassembly.8.0.0-rc.2.23480.2.nupkg.sha512",
     "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.net.http.headers\\2.2.0\\microsoft.net.http.headers.2.2.0.nupkg.sha512",
-    "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.0-rc.2.23479.6\\microsoft.net.illink.tasks.8.0.0-rc.2.23479.6.nupkg.sha512",
-    "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\8.0.0-rc.2.23479.6\\microsoft.net.sdk.webassembly.pack.8.0.0-rc.2.23479.6.nupkg.sha512",
+    "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.0\\microsoft.net.illink.tasks.8.0.0.nupkg.sha512",
+    "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.net.sdk.webassembly.pack\\8.0.0\\microsoft.net.sdk.webassembly.pack.8.0.0.nupkg.sha512",
     "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
     "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\bmlab\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",

@@ -25,7 +25,7 @@ namespace RemoteAppWeb.Services
             var moduleJson =
               new StringContent(JsonSerializer.Serialize(moduleaction), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PostAsync("https://localhost:7023/api/ModuleAction", moduleJson);
+            var response = await _httpClient.PostAsync("https://localhost:7149/api/ModuleAction", moduleJson);
             Console.WriteLine($"Responcse code : {response.StatusCode}");
             Console.WriteLine($"Responcse contenent : {response.ReasonPhrase}");
             var responseBody = await response.Content.ReadAsStringAsync();
@@ -41,12 +41,12 @@ namespace RemoteAppWeb.Services
 
         public async  Task DeleteModuleAction(int moduleactionId)
         {
-            await _httpClient.DeleteAsync($"https://localhost:7023/api/ModuleAction/{moduleactionId}");
+            await _httpClient.DeleteAsync($"https://localhost:7149/api/ModuleAction/{moduleactionId}");
         }
 
         public async Task<IEnumerable<Shared.Dto.Action>> GetActionsByResource(Resource resource)
         {
-            var response = await _httpClient.GetAsync($"https://localhost:7023/api/ModuleAction/resource/{resource}/resource-actions");
+            var response = await _httpClient.GetAsync($"https://localhost:7149/api/ModuleAction/resource/{resource}/resource-actions");
 
             // Handle the HTTP response
             if (response.IsSuccessStatusCode)
@@ -71,7 +71,7 @@ namespace RemoteAppWeb.Services
 
         public async Task<IEnumerable<ModuleActionDto>> GetActionsByResourceExcludingFirst()
         {
-            var response = await _httpClient.GetAsync("https://localhost:7023/api/ModuleAction/resource/actions/excluding-first");
+            var response = await _httpClient.GetAsync("https://localhost:7149/api/ModuleAction/resource/actions/excluding-first");
 
             // Handle the HTTP response
             if (response.IsSuccessStatusCode)
@@ -98,7 +98,7 @@ namespace RemoteAppWeb.Services
         public async Task<IEnumerable<ModuleActionDto>> GetListModuleActionsByResource(Resource resource)
         {
 
-            var response = await _httpClient.GetAsync($"https://localhost:7023/api/ModuleAction/resource/{resource}/actions");
+            var response = await _httpClient.GetAsync($"https://localhost:7149/api/ModuleAction/resource/{resource}/actions");
 
             // Handle the HTTP response
             if (response.IsSuccessStatusCode)
@@ -125,14 +125,14 @@ namespace RemoteAppWeb.Services
         {
 
             return await JsonSerializer.DeserializeAsync<ModuleActionDto>
-             (await _httpClient.GetStreamAsync($"https://localhost:7023/api/ModuleAction/{ModuleActionId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
+             (await _httpClient.GetStreamAsync($"https://localhost:7149/api/ModuleAction/{ModuleActionId}"), new JsonSerializerOptions() { PropertyNameCaseInsensitive = true });
         }
 
         public async Task<IEnumerable<ModuleActionDto>> GetModuleActions()
         {
             using (var httpClient = new HttpClient())
             {
-                var response = await httpClient.GetAsync("https://localhost:7023/api/ModuleAction");
+                var response = await httpClient.GetAsync("https://localhost:7149/api/ModuleAction");
 
                 // Handle the HTTP response
                 if (response.IsSuccessStatusCode)
@@ -158,7 +158,7 @@ namespace RemoteAppWeb.Services
 
         public  async Task<IEnumerable<ModuleActionDto>> GetResourceAction(ResourceActionParameters parameters)
         {
-            var response = await _httpClient.GetAsync("https://localhost:7023/api/ModuleAction/resource/{parameters}");
+            var response = await _httpClient.GetAsync("https://localhost:7149/api/ModuleAction/resource/{parameters}");
 
             // Handle the HTTP response
             if (response.IsSuccessStatusCode)
@@ -183,7 +183,7 @@ namespace RemoteAppWeb.Services
 
         public async Task<IEnumerable<Resource>> GetUsedResources()
         {
-            var response = await _httpClient.GetAsync("https://localhost:7023/api/ModuleAction/resource/used");
+            var response = await _httpClient.GetAsync("https://localhost:7149/api/ModuleAction/resource/used");
 
             // Handle the HTTP response
             if (response.IsSuccessStatusCode)
@@ -215,7 +215,7 @@ namespace RemoteAppWeb.Services
             var moduleactionJson =
                    new StringContent(JsonSerializer.Serialize(moduleaction), Encoding.UTF8, "application/json");
 
-            var response = await _httpClient.PutAsync("https://localhost:7023/api/ModuleAction", moduleactionJson);
+            var response = await _httpClient.PutAsync("https://localhost:7149/api/ModuleAction", moduleactionJson);
             Console.WriteLine($"Responcse code of update user : {response.StatusCode}");
             Console.WriteLine($"Responcse contenent of update user  : {response.ReasonPhrase}"); // Your API logic
             Console.WriteLine($"Responcse  of update moduleaction  : {response}");
